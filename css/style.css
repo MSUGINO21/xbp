@@ -29,8 +29,9 @@ html, body {
     margin-left: 0px;
     margin-top: 0px;
     margin-bottom: 0px;
-	background: #deebf0;
+    background-color: #deebf0;
 }
+
 h1{ background-color: darkslateblue;
     color: rgb(255, 255, 255);
     font-size: 50px;
