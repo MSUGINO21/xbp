@@ -4,114 +4,132 @@
    
     <title>見出しタグについて</title>
    
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style 3.css">
 </head>
 <body>
     <h1>箇条書きのタグ</h1>
 
      <div>
-      箇条書きのタグは、数字付きと数字なしの２種類があります。<br>
-
-      各項目に数字をつけて羅列したい場合は &lt;ol&gt;  &lt;/ol&gt; のタグを使用します。<br>
+      箇条書きのタグは、数字付きと数字なしの２種類があります。<br><br>
+      各項目に数字をつけて羅列したい場合は &lt;ol&gt; &lt;/ol&gt; のタグを使用します。<br>
       各項目に数字をつけない場合は　&lt; ul &gt;  &lt;/ul&gt;　のタグを使用します。<br>
       <br>
 
       上記のタグの中に、各項目の文字を　&lt;li&gt; &lt;/li&gt;  で括って入れ込むと、箇条書きで文字が表示されます。<br>
+      <br>
+      例1）　数字をつけて文字を箇条書きする場合、以下のように入力する。<br>
 
-      例1）　数字をつけて文字を箇条書きする場合<br>
-
-      &lt;ol
-      &lt;li>りんご</li>
-      &lt;li>りんご</li>
-      &lt;li>りんご</li>
-      &lt;/ol>
-
-      のように入力する。
+      <xmp>
+        <ol>
+          <li>りんご</li>
+          <li>みかん</li>
+          <li>バナナ</li>
+        </ol> 
+      </xmp>
 
       ＜実際の見え方＞
       
       <ol>
         <li>りんご</li>
-        <li>りんご</li>
-        <li>りんご</li>
+        <li>みかん</li>
+        <li>バナナ</li>
       </ol>
+      <br>
 
-      例2）数字なしで文字を箇条書きする場合
+      例2）数字なしで文字を箇条書きする場合、以下のように入力する。<br>
+      <xmp>
       <ul>
         <li>りんご</li>
-        <li>りんご</li>
-        <li>りんご</li>
+        <li>みかん</li>
+        <li>バナナ</li>
       </ul>
-      のように入力する。
+    </xmp>
 
       ＜実際の見え方＞
       <ul>
         <li>りんご</li>
-        <li>りんご</li>
-        <li>りんご</li>
+        <li>みかん</li>
+        <li>バナナ</li>
       </ul>
 
-      数字なしの場合、中黒（・）の記号を変換することができます。
-
-      <ul style="list-style-type:disc;"></ul>
-      list-style-type:circle; 
-      箇条書きリストのhtmlタグ <ul><li>
-        箇条書きにしてリスト化する場合には、<ul>と<li>のhtmlタグを使います。
-        まず、リスト化するそれぞれの要素を<li></li>で囲みます。
-        そして、それらをさらに<ul></ul>で囲みます。
-        
-        【例：カレーの材料】
-        
+      <br>
+      これらのタグで、文字の他に画像やリンクも羅列できます。 ※<a href="picture.html">画像のタグ</a>、<a href="link">リンクのタグ</a>について<br>
+      <br>
+      例）Yahoo!Japanのトップページリンク（https://www.yahoo.co.jp）とimagesフォルダの中の<br>
+          手書きイラスト(元データの10%の大きさ)
+      を羅列する場合、以下のように入力する。
+      <xmp>
         <ul>
-        <li>じゃがいも</li>
-        <li>豚肉</li>
-        <li>にんじん</li>
-        <li>たまねぎ</li>
+          <li><a href="https://www.yahoo.co.jp/">yahooトップページ</a></li>
+          <li><img src="images/star.png" width="10%"></li>
         </ul>
-        
-        このように記述すると以下のようにリスト化されて表示されます。
-        
-        【実際の表示】
-        
-        じゃがいも
-        豚肉
-        にんじん
-        たまねぎ
-        上の箇条書リストは黒い丸で表示されていますが、これを番号順で記述する場合は、<li>の部分はそのままで、<ul>をの箇所を<ol>に変えるだけです。
-        
-        番号付きの箇条書きリスト
-        
-        <ol>
-        <li>じゃがいも</li>
-        <li>豚肉</li>
-        <li>にんじん</li>
-        <li>たまねぎ</li>
-        </ol>
-        
-        このように記述すると、実際には番号が付いた形で次のように表示されます。
-        
-        【実際の表示】
-        
-        じゃがいも
-        豚肉
-        にんじん
-        たまねぎ
-        この箇条書きのhtmlタグは、文中のみならず、サイドバーのメニューリストでもよく使われます。
-        サイドバーの場合は黒い丸や番号順ではなく、画像で置き換えているケースが多いです。
-        
-        list-style-type:でリストスタイルを指定
-        
-        箇条書き「ul」の黒丸を白丸にしたい場合などはlist-style-type:で指定します。
-        
-        <ul  style="list-style-type:disc;">
-        
-        list-style-type:disc; → 黒丸
-        list-style-type:circle; → 白丸
-        list-style-type:none; 
-       
-       
+      </xmp>
+ 　　<br>
+    ＜実際の見え方＞<br>
+    <ul>
+      <li><a href="https://www.yahoo.co.jp/">yahooトップページ</a></li>
+      <li><img src="images/star.png" width="10%"></li>
+    </ul>
 
-    </div>
+      <br>
+      数字なしの場合、先頭のマーカー（・）の記号を変換することができます。<br>
+    
+      変換するには&lt; ul &gt;  &lt;/ul&gt;の代わりに、&lt;ul style="list-style-type: マーカーの種類";)"&gt; &lt;/ul&gt; で括ります。<br>
+      <br>
+      例）マーカーを○にする→style="list-style-type: circle"<br>
+      <xmp>
+        <ul style="list-style-type: circle">
+          <li>りんご</li>
+          <li>みかん</li>
+          <li>バナナ</li>
+        </ul>
+      </xmp>
+      ＜実際の見え方＞<br>
+      <ul style="list-style-type: circle">
+        <li>りんご</li>
+        <li>みかん</li>
+        <li>バナナ</li>
+      </ul>
+      <br>
+
+      例）マーカーを非表示にする→style="list-style-type: square"<br>
+      <xmp>
+        <ul style="list-style-type: square">
+          <li>りんご</li>
+          <li>みかん</li>
+          <li>バナナ</li>
+        </ul>
+      </xmp>
+      ＜実際の見え方＞<br>
+      <ul style="list-style-type: square">
+        <li>りんご</li>
+        <li>みかん</li>
+        <li>バナナ</li>
+      </ul>
+      <br>
+
+      例）マーカーを非表示にする→style="list-style-type: none"<br>
+      <xmp>
+        <ul style="list-style-type: none">
+          <li>りんご</li>
+          <li>みかん</li>
+          <li>バナナ</li>
+        </ul>
+      </xmp>
+      ＜実際の見え方＞<br>
+      <ul style="list-style-type: none">
+        <li>りんご</li>
+        <li>みかん</li>
+        <li>バナナ</li>
+      </ul>
+      <br>
+    ※ 中黒（・）をあえて　style="list-style-type: disc"と入力もできます<br> <br>
+    <br>
+    <br>
+
+  
+    <a href="1.html">　&lt;前のページへ戻る&gt;　</a>
+  </div>
 
 </body>
 </html>

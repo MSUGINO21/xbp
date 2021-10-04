@@ -25,45 +25,27 @@ html, body {
 	font-size: 16px;
 	font-family: sans-serif;
 	color: #393939;
-    margin-right: 0px;
-    margin-left: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-	background: #deebf0;
+    margin-left: 15px;
+    margin-bottom: 40px;
+	background: #efefef;
 }
-h1{ background-color: darkslateblue;
-    color: rgb(255, 255, 255);
-    font-size: 50px;
+h1{
     text-indent: 0em;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding-top: 25px;
-    padding-bottom: 30px;
-    padding-right: 10px;
-    padding-left: 10px;
-    height: 60px;
-    text-align: center;
-    
 }
-img{
-    border-radius: 50%;  
-}
-
 h2{
-    text-align: center;
+    margin-left: 1em;
+    margin-top: 1em;
 }
 h3{
     margin-left: 2em;
 }
 div{
-    margin-top: 40px;
-    margin-bottom: 40px;
-    margin-right: 0px;
-    margin-left: 0px;
-    text-align: center;
+    margin-top: 1em;
+    margin-left: 3em;
 }
-
-
+p{
+    margin-left: 3em;
+}
 span.blackback{
     text-indent: 3em;
     background: #393939;
