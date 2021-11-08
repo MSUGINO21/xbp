@@ -23,7 +23,9 @@
     <ul>
         <li>breakでループを終了できる。</li>
         <li>while文：無限ループを繰り出せる</li>
-        <li>mport random＝ランダムのライブラリを使うということ（ランダムのものは標準ライブラリ）</li>
+        <li>ライブラリ（＝モジュール、パッケージ）は、プログラミング上でよく使う機能や便利な機能を簡単に使えるようにしたツールのこと。</li>
+        <li>import random＝ランダムのライブラリを使うということ（ランダムのものは標準ライブラリ）</li>
+        <li>標準ライブラリ＝Pythonにもともと入っているライブラリ</li>
         <li>外部ライブラリ＝世界中の人々が開発してくれたライブラリ、インポートする前にターミナル（macの場合）でインストールする必要あり。</li>
     </ul>
     <br>
@@ -31,7 +33,7 @@
     <h2>課題</h2>
     班で出た案：ゲーム、スケジュール帳→杉野：ToDoリスト作成を選択<br>
     <h3>完成品（画像）</h3>
-    <img src="images/todolist1108.png" width="60%"><br>
+    <img src="images/todolistapp.png" width="60%"><br>
     ネットで探したソースコードは：<a href="https://qiita.com/narupo/items/53326d6890762fc76d0f" target="_blank">Qiita 簡単で早い！Python3のTkinterを使って作るTODOアプリ（外部サイト）</a>より<br>
     <h3>元のコード</h3>
     <code>
@@ -136,7 +138,8 @@
         <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;main()</li>
         <li style="background-color:#EFF;"></li>
         </ol></code>
-        <br>
+        イメージ<br>
+        <img src="images/todolistapp_original.png" width="50%"><br>
 上記ソースコードをコピペし、ここから自分用に一部変更した。<br>
 <h3>変更後</h3>
 <code>
@@ -240,9 +243,9 @@
     <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 追加ボタンの作成・４種類に分ける</li>
     <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_btn_a = tk.Button(self, text='重要・緊急', command=self._click_add_btn_a)</li>
     <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_btn_a.pack(side='left')</li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_btn_b = tk.Button(self, text='緊急', command=self._click_add_btn_b)</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_btn_b = tk.Button(self, text='重要', command=self._click_add_btn_b)</li>
     <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_btn_b.pack(side='left')</li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_btn_c = tk.Button(self, text='重要', command=self._click_add_btn_c)</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_btn_c = tk.Button(self, text='緊急', command=self._click_add_btn_c)</li>
     <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_btn_c.pack(side='left')</li>
     <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_btn_d = tk.Button(self, text='その他', command=self._click_add_btn_d)</li>
     <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_btn_d.pack(side='left')</li>
@@ -388,7 +391,8 @@
     <li style="background-color:#EFF;"></li>
     </ol></code>
 <br>
-実際に使っている様子は<a href="https://www.youtube.com/watch?v=-WC63sew2eI" target="_blank">こちら（YouTube 動画）</a><br>
+デスクトップアプリにする方法は<a href="6-python.html">こちら</a><br>
+実際に使っている様子は<a href="https://youtu.be/IF0MWFh4lLc" target="_blank">こちら（YouTube 動画）</a><br>
 <h3>変更点</h3>
 <ul>
     <li>ボタンの数を１つから「重要・緊急」「重要」「緊急」「その他」の４つに増やした。</li>
@@ -397,12 +401,12 @@
 </ul>
 <h3>課題</h3>
 <ul>
-    <li>削除ボタンを一つにしたい</li>
-    <li>シンプルすぎるのでデザインを凝らしたい</li>
+    <li>削除ボタンを一つにしたい。</li>
+    <li>１つの項目を各欄に自由に移動させたい。</li>
+    <li>シンプルすぎるのでデザインを凝らしたい。</li>
     <li>リストを４つ作った分コードも全体的に×４で書いたが、もしかしたらうまくコードを省略できるのでは？</li>
 </ul>
 <br>
-
 <h3>参考サイト(外部サイト）</h3>
     <ul>
         <li><a href="https://python.keicode.com/advanced/tkinter.php" target="_blank">Python入門　Tkinter による GUI プログラミング</a></li>
@@ -410,11 +414,12 @@
         <li><a href="https://techacademy.jp/magazine/24530" target="_blank">TechAcademyマガジン　Pythonにおける__init__の利用方法を現役エンジニアが解説【初心者向け】</a></li>
         <li><a href="https://www.sejuku.net/blog/40791" target="_blank">SAMURAIENGINEER Blog 【Python入門】関数を使うために必要な知識をやさしく解説！</a></li>
         <li><a href="https://qiita.com/narupo/items/53326d6890762fc76d0f" target="_blank">Qiita 簡単で早い！Python3のTkinterを使って作るTODOアプリ（外部サイト）</a></li>
+        <li><a href="https://www.wantanblog.com/entry/2020/07/14/224611#tkinter" target="_blank">SEワンタンの独学備忘録 【Python】PythonでGUI（デスクトップ）アプリを作ってみる@Windows</a></li>
   
     </ul>
     <br>
     <br>
-    <a href="index.html">前の画面に戻る</a>
+    <a href="6.html">前の画面に戻る</a>
     </diV>  
 
 </body>
