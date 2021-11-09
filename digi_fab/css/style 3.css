@@ -31,6 +31,7 @@ logotohome img{
     }
   }
 
+
 ul.tab{
 list-style-type: none; 
   margin-top: 0px;
@@ -119,10 +120,25 @@ div{width: 800px;
     animation-iteration-count:none;
     animation-timing-function:ease;
     animation-delay: 0.5s;
-    animation-direction:normal;
-  
-    
+    animation-direction:normal;    
 }
+
+
+div.menu{
+    width: 250px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    animation-name: fadeInAnime;
+    animation-fill-mode:backwards;
+    animation-duration: 3s;
+    animation-iteration-count:none;
+    animation-timing-function:ease;
+    animation-delay: 0.3s;
+    animation-direction:normal;
+  }
 
 ol{
     text-align: left;
