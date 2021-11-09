@@ -32,35 +32,40 @@ logotohome img{
   }
 
 ul.tab{
-    list-style-type: none; 
+list-style-type: none; 
   margin-top: 0px;
-  padding-left: 0px;
   margin-bottom: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   height: 30px; 
+  background-color: #000033;
+  animation-name: fadeInAnime;
+  animation-fill-mode:backwards;
+  animation-duration: 3s;
+  animation-iteration-count:none;
+  animation-timing-function:ease;
+  animation-delay: 0.3s;
+  animation-direction:normal;
 }
 
 li.tabItem a{
-    display: block;
+    display: inline;
     float: left;  /*blockにしてfloat:leftにする事で、横に並ぶように指定*/
     background-color: #000033;
     color: blanchedalmond;
     height: 25px;
-    width: 230px;
+    width: 250px;
     margin-right: 5px;
     padding-top: 5px;
     text-align: center;
-    font-weight: bold;
     line-height: 25px;  /*文字の縦位置指定。height:25pxと数値を合わせる事で縦位置のセンタリングをしている*/
     margin-bottom: 0px;
-    text-decoration: none;
-    animation-name: fadeInAnime;
-    animation-fill-mode:backwards;
-    animation-duration: 3s;
-    animation-iteration-count:none;
-    animation-timing-function:ease;
-    animation-delay: 0.3s;
-    animation-direction:normal; /*aタグの文字の下線はなし*/
+    text-decoration: none; /*aタグの文字の下線はなし*/
 
+}
+
+a:hover{
+  color: orange;
 }
 
 html, body {
@@ -90,11 +95,8 @@ h1{ background-color: darkslateblue;
     animation-timing-function:ease;
     animation-delay: 0.3s;
     animation-direction:normal;
-    }
-   
-
     
-
+}
 img{margin-right: 10px;
      
 }
