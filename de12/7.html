@@ -21,23 +21,6 @@
     <diV>
     
     <h2>課題</h2>
-    まずデータの項目を見てから、合計時間と家賃に注目した。
-    そこから移動時間が短く家賃もそこそこ安い、東急東横線沿いを調べることにした。
-    一人暮らしを想定してワンルームを調べるが、条件は<ul>
-    <li>移動時間は30分未満（合計時間の平均が約43分だったため、それよりも少し短くした）</li>
-    <li>そのうち徒歩は15分未満</li>
-    <li>家賃は5万円未満</li>
-    </ul>   
-    とした。<br>
-    結果、反町〜妙蓮寺駅周辺の物件だと、移動時間も少なく、家賃も安いと考えた。
-    <br><br>
-    ＜路線ごとの合計時間のヒストグラム＞<br>
-    <img src="images/datamining1.png" width="80%"><br>
-    <img src="images/datamining2.png" width="80%"><br>
-    <img src="images/datamining3.png" width="80%"><br>
-    <img src="images/graph_line&commute.png" width="80%"><br>
-    <img src="images/graph_station.png" width="80%"><br>
-    <br>
     <h3>ソースコード</h3>
     <code>
         <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
@@ -80,8 +63,34 @@
         <li style="background-color:#EFF;"></li>
         <li style="background-color:#EEF;"></li>
         <li style="background-color:#EFF;"></li>
-        </ol></code>
+        </ol></code><br>
+    <h3>説明</h3>
+    まずデータの項目を見てから、合計時間と家賃に注目した。<br>
+    <img src="images/datamining1.png" width="80%"><br>
+    <img src="images/datamining2.png" width="80%"><br>
+    そこから移動時間が短く家賃もそこそこ安い、東急東横線沿いを調べることにした。<br>
+    ＜路線ごとの合計時間のヒストグラム＞<br>
+    <img src="images/graph_line&commute.png" width="80%"><br>
+    <br>
+    次に、一人暮らしを想定してワンルームを調べる。条件は<ul>
+    <li>移動時間は30分未満（合計時間の平均が約43分だったため、それよりも少し短くした）</li>
+    <li>そのうち徒歩は15分未満（それより多いと遠すぎてしんどい、女性だと夜道を長く歩くのは心配）</li>
+    <li>家賃は5万円未満（平均が約7万円だったが、アルバイトの賃金を考えると高すぎると思うので）</li>
+    </ul>   
+    とした。<br>
+    結果、この条件にヒットする物件が244件見つかった。<br>
+    <img src="images/datamining3.png" width="80%"><br><br>
+    そこから駅別にデータを分けたところ、反町〜妙蓮寺駅周辺の物件だと移動時間も少なく家賃も安いと考えた。<br>
+    ＜244の物件の駅別ヒストグラム＞<br>
+    <img src="images/graph_station.png" width="80%"><br>
+    <br>
     
+        <br>
+        <h3>感想</h3>
+        本当はもう少し条件を絞ったり表を作成したりしたかったが、コードを書いていてエラーが多発し、火曜日までに間に合わなかった。<br>
+        デザイン演習の授業ページを見直したほか、道用先生のページも参考にしたが、まだまだ知識が不足している。<br>
+        継続してネットなどから情報を調べたい（せめて、なぜエラーが起きるかがわかるようにしたい）。
+    <br> <br> <br>
    
     <a href="index.html">前の画面に戻る</a>
     </diV>  
