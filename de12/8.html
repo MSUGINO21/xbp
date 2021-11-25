@@ -35,8 +35,31 @@
     ＜パワーポイントより画像：合計時間・徒歩の時間・家賃＞
     <img src="images/ppt_1116_1.png" width="80%"><br>
     <img src="images/ppt_1116_2.png" width="80%"><br>
-    <img src="images/ppt_1116_3.png" width="80%"><br>
-    <br>
+    <img src="images/ppt_1116_3.png" width="80%"><br><br>
+    ※ソースコードの参考：
+    <ul>
+        <li>斎藤さんの「デザイン演習Ⅰ・Ⅱ」のHPから。リンクは<a href="https://saihika.github.io/xbp/de12/7.html" target="_blank">こちら（外部サイト）</a></li>
+        <li>元データを１つの路線のワンルームに絞ってから、駅ごとに平均の棒グラフを出すコード↓<br>（篠原さんから共有：例&nbsp;家賃）</li>
+    </ul>
+    <code>
+        <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+        <li style="background-color:#EFF;">import pandas as pd  # データ分析に用いるライブラリ,padnasをpdと認識する</li>
+        <li style="background-color:#EEF;">import matplotlib.pyplot as plt  # グラフ表示に用いるライブラリ</li>
+        <li style="background-color:#EFF;">pd.set_option('display.unicode.east_asian_width', True)  # 表示のずれを少し緩和</li>
+        <li style="background-color:#EEF;">plt.rcParams['font.family'] = 'IPAexGothic'  # グラフ表示におけるフォントの指定</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">data_path = "./data.csv"</li>
+        <li style="background-color:#EFF;">df_data = pd.read_csv(data_path,  encoding="utf-8-sig")</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">keikyu = (df_data["路線"] == "京急本線") &amp; (df_data["間取り"] =="ワンルーム")</li>
+        <li style="background-color:#EEF;">df_keikyu = df_data[keikyu]</li>
+        <li style="background-color:#EFF;">df_keikyu_mean = df_keikyu.groupby("駅").mean()</li>
+        <li style="background-color:#EEF;">df_keikyu_mean.loc[:, "合計時間"].sort_values().plot.bar()</li>
+        <li style="background-color:#EFF;">plt.subplots_adjust(bottom=0.3)</li>
+        <li style="background-color:#EEF;">plt.show()</li>
+        </ol></code>
+        <img src="images/exp_mean_1116.png" width="50%">
+    <br><br>
     その他、
     <ul>
         <li>横浜駅、みなとみらいエリアからの近さ</li>
