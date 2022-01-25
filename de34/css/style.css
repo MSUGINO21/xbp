@@ -1,0 +1,158 @@
+@charset "utf-8";
+/* 冒頭でimport */
+@import url('https://fonts.googleapis.com/css?family=Raleway:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:400,700&display=swap&subset=japanese');
+/* フォントを指定したいところで */
+
+logo img{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* 画像のトリミング */
+}
+
+logotohome img{
+    border-radius: 70%;
+    width: 70px;
+    height: 70px;
+    object-fit: cover; /* 画像のトリミング */
+}
+
+
+
+/* ========== common ========== */
+@keyframes fadeInAnime{
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;}
+  }
+
+ul.tab{
+    list-style-type: none; 
+  margin-top: 0px;
+  padding-left: 0px;
+  margin-bottom: 0px;
+  height: 30px; 
+  animation-name: fadeInAnime;
+  animation-fill-mode:backwards;
+  animation-duration: 3s;
+  animation-iteration-count:none;
+  animation-timing-function:ease;
+  animation-delay: 0.3s;
+  animation-direction:normal;
+}
+
+li.tabItem a{
+    display: block;
+    float: left;  /*blockにしてfloat:leftにする事で、横に並ぶように指定*/
+    background-color: #000033;
+    color: blanchedalmond;
+    height: 25px;
+    width: 230px;
+    margin-right: 5px;
+    padding-top: 5px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 25px;  /*文字の縦位置指定。height:25pxと数値を合わせる事で縦位置のセンタリングをしている*/
+    margin-bottom: 0px;
+    text-decoration: none; /*aタグの文字の下線はなし*/ 
+    animation-name: fadeInAnime;
+    animation-fill-mode:backwards;
+    animation-duration: 3s;
+    animation-iteration-count:none;
+    animation-timing-function:ease;
+    animation-delay: 0.3s;
+    animation-direction:normal;
+
+}
+
+html, body {
+	font-size: 16px;
+	font-family: sans-serif;
+	color: #393939;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 40px;
+	background: #deebf0;
+}
+
+
+h1{
+     background-color: darkslateblue;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    text-indent: 0em;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 25px;
+    padding-bottom: 30px;
+    padding-right: 10px;
+    padding-left: 10px;
+    height: 60px;
+    text-align: center;
+    animation-name: fadeInAnime;
+    animation-fill-mode:backwards;
+    animation-duration: 3s;
+    animation-iteration-count:none;
+    animation-timing-function:ease;
+    animation-delay: 0.3s;
+    animation-direction:normal;
+    
+}
+
+
+img{margin-right: 10px;
+    border-radius: 50%;  
+}
+
+h2{ color: black;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+h3{
+    margin-left: 0px;
+}
+div{width: 300px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    animation-name: fadeInAnime;
+    animation-fill-mode:backwards;
+    animation-duration: 3s;
+    animation-iteration-count:none;
+    animation-timing-function:ease;
+    animation-delay: 0.5s;
+    animation-direction:normal;
+    
+}
+
+ol{
+    text-align: left;
+    margin-left: 50px;
+
+}
+
+ul{ width: 50px;
+    text-align: left;
+    margin-left: 50px;
+    list-style: none;
+}
+
+
+
+p{
+    margin-left: 3em;
+}
+
+
+span.blackback{
+    text-indent: 3em;
+    background: #393939;
+    color: #efefef;
+}
+
