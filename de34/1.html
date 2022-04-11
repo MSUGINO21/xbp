@@ -11,16 +11,71 @@
 
     <ul class="tab">
         <li class="tabItem noselected" contentId="content1"><a href="../index.html">HOME</a></li>
-        <li class="tabItem noselected" contentId="content2"><a href="index.html">デザイン演習1・2</a></li>
+        <li class="tabItem noselected" contentId="content2"><a href="../de12/index.html">デザイン演習1・2</a></li>
         <li class="tabItem noselected" contentId="content3"><a href="../digi_fab/index.html">デジタルファブリケーション</a></li>
-        <li class="tabItem noselected" contentId="content4"><a href="https://kuxbp.github.io/xbp/xbp2021/">XBP1期生（外部サイト）</a></li>
+        <li class="tabItem noselected" contentId="content4"><a href="../de34/index.html">デザイン演習3・4</a></li>
+        <li class="tabItem noselected" contentId="content5"><a href="https://kuxbp.github.io/xbp/xbp2021/">XBP1期生（外部サイト）</a></li>
+        
       </ul>
       
     <h1>デザイン演習　第１回</h1>
+
    
     <div>
+        <h2>メモ</h2>
+       <ul>
+           <li>マイコン（授業で使うやつ）→Arduino UNO</li>
+           <li>Wifiやbluetooth機能付きの代表―ESP32</li>
+           <li>M5stack―ディスプレイ付き</li>
+           <li>Sony-カメラモジュールや拡張機能が充実</li>
+       </ul> 
+       <br>
+       <h4>プログラム</h4>
+        
+       Arduinoの場合はJavaの文法とほぼ同じ。
+        <b>{}</b>で括って内容を表し、一項目ごとに<b>;</b>で区切る。条件付けはif文を使う。<br>
+        Void setup→起動時の動きを設定。<br>
+        Void loop　起動後、同じ動きを繰り返す。<br>
+        intは整数。<br>
+        デジタルは０・１の世界/アナログは連続した数値<br>
+        <a href="http://www.musashinodenpa.com/arduino/ref/index.php">Arduino 日本語リファレンス（外部サイト）</a>
+        <a href="https://programmingnote.jp/archives/535">独学プログラマーのプログラミングノート（外部サイト）</a>
+        <br>
 
-    </div>
+       <h4>練習１：Lチカ（LEDを光らせる）</h4>
+       <ul>
+           <li>LED：5V（過電流防ぐため、何ボルトかに注意）<br> 
+            LEDの足は長い方が＋（アノード）、短い方がー（カソード） </li>
+            <li>Void setup→pinMode(13, output)　＝マイコンの13番ピンから出力する</li>
+            <li>digitalWrite(13,HIGH);　もしくはdigitalWrite(13,LOW);<br>
+                ＝HIGHは電源ON, LOWは電源OFFの意味</li>
+            <li>delay(500);　=delayは待ち時間、（）の中は１＝0.001秒</li>
+       </ul>
+       ↓書き方は異なるが示している内容は同じ<br>
+       <img src="images/220411-1.png" width="48%"><img src="images/220411-2.png" width="40%">
+       <h4>練習２：明るさセンサー</h4>
+       <ul>
+           <li>CdSセル：光センサー。光の強さに応じて電気抵抗が低下する。人の目の特性に近く、緑色の光の感度が高いので明るさセンサーに用いられる。暗いとセンサーの抵抗値が大きくなり、明るいところに置くと抵抗値が低くなる性質を持っています。</li>
+            <li>Serial.begin(9600);　＝シリアルモニタを使う</li>
+            <li>int val=0; →読み取った値を格納する変数</li>
+            <li>val=analogRead(1);　　アナログピンから数値を読み取る。（）内でピンを指定。この場合A1のピンを使う。</li>
+            <li>Serial.println(val);　printlnでシリアルモニタに数値を表示</li>
+       </ul>
+       <img src="images/220411-3.png" width="50%">
+       <h4>練習３：LED点灯と明るさセンサーを合体</h4>
+       <ul>
+           <li>暗いとLEDが光るようにプログラムする。</li>
+           <li>「暗い・明るいと〜」の条件はif文を使う。</li>
+       </ul>
+    <img src="images/220411-4.png" width="50%">
+<br><br><br>
+<h3>次回までの課題</h3>
+日常の中の負、正の感情をリスト化(準備中)
+<br>
+<br>
+<a href="../de34/index.html">前のページに戻る</a>
+</div>
+
 
 </body>
 </html>
