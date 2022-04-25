@@ -285,7 +285,7 @@ div.menu{
     margin-bottom: 50px;
     margin-right: auto;
     margin-left: auto;
-    text-align: auto;
+    text-align: center;
     animation-name: fadeInAnime;
     animation-fill-mode:backwards;
     animation-duration: 3s;
@@ -301,6 +301,10 @@ ol{
 
 ul{
     text-align: left;
+}
+
+ul, menu{
+  text-align: center;
 }
 
 p{
