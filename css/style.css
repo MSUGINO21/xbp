@@ -232,7 +232,7 @@ html, body {
     margin-right: 0px;
     margin-top: 0px;
     margin-bottom: 40px;
-	background: #deebf0;
+	background: white;
 }
 
 h1.logo{ background-color: rgb(0, 0, 0);
@@ -246,6 +246,16 @@ h1{
 
 }
 
+h1.course-title{
+  text-align: center;  
+  margin-left: 200px;
+  margin-right: 200px;
+  border-bottom: solid 2px #2b2d2d;
+  border-top: solid 2px #2b2d2d;
+  padding: 11px 0;
+  
+}
+
 h2{ color: black;
 }
 
@@ -256,12 +266,33 @@ h3{
 div.portfoliolist{
   margin-top: 100px;
   text-align: center; 
+  
+}
+
+div.editor{
+  text-align: center; 
+  display: block;
+  margin: auto;
 }
 
 div.profile{
-  margin-top: 100px;
+
   text-align: center;  
+  display: flex;
 }
+
+div.profile1{
+padding-top: 60px;
+}
+
+div.profile2{
+  font-weight: bold;
+  border: solid 3px #000000;
+  border-radius: 5%;
+  margin: 80px;
+  width: 1000px;
+  text-align: center;
+  }
 
 ul.navguide{
 
@@ -273,6 +304,23 @@ ul.navguide{
   padding: 50px;
 
 }
+
+img.profile {
+  border-radius:50%;
+  
+}
+
+ul.profile2{
+  list-style: none; 
+  padding: 10px;
+}
+
+li.profile2{
+  text-align: left;
+  padding: 10px;
+  margin-left: 50px;
+}
+
 
 li{
   text-align: center;
