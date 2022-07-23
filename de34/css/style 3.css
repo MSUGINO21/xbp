@@ -234,7 +234,7 @@ html, body {
     margin-right: 0px;
     margin-top: 0px;
     margin-bottom: 40px;
-	background: #deebf0;
+	background: rgb(246, 253, 255);
 }
 
 header{
@@ -246,30 +246,28 @@ img.title{
   display: block; margin: auto;
 }
 
-h1{ background-color: black;
-    color: rgb(255, 255, 255);
-    font-size: 40px;
-    text-indent: 0em;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding-top: 25px;
-    padding-bottom: 30px;
-    height: 60px;
-    text-align: center;
-    animation-name: fadeInAnime;
-    animation-fill-mode:backwards;
-    animation-duration: 3s;
-    animation-iteration-count:none;
-    animation-timing-function:ease;
-    animation-delay: 0.3s;
-    animation-direction:normal;
+
     
-}
-img{margin-right: 10px;
+
+img{
+  margin-right: 10px;
      
 }
 
-h2.menu{ color: black;
+h1.menu{
+  display: center;
+  text-align: center;
+  width: 500px;
+  padding-top: 10px;
+  padding-bottom  : 10px;
+  margin-left: 200px;
+  margin-right: 200px;
+  border-bottom: solid 2px #2b2d2d;
+  border-top: solid 2px #2b2d2d;
+}
+
+h2.menu{ 
+  color: black;
   display: center;
   margin-left: 200px;
   margin-right: 200px;
@@ -277,8 +275,30 @@ h2.menu{ color: black;
   border-top: solid 2px #2b2d2d;
   
 }
-h3{
-    margin-left: 0px;
+
+h1.menu-contents{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: block; margin: auto;
+  text-align: center;
+
+}
+
+h2.menu-contents{
+  margin-left: 30px;
+  color: black;
+  display: left;
+  width: 300px;
+  border-bottom:  solid 2px #2b2d2d;
+}
+
+
+h3.menu-contents{
+  margin-left: 30px;
+  color: black;
+  display: left;
+  width: 500px;
+  
 }
 div{width: 800px;
     margin-top: 50px;
@@ -301,6 +321,21 @@ div.menu{
     text-align: center;
  
   }
+
+  div.contents{
+    background: white;
+    width: 1200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    border: solid 3px #000000;
+    text-align: left; 
+}
+
+div.details{
+  margin: 30px;
+}
+
 
 ol{
     text-align: left;
@@ -327,3 +362,16 @@ span.blackback{
     color: #deebf0;
 }
 
+div.photo{
+  display: center;
+}
+
+img.photo{
+  margin: 20px;
+  padding: auto;
+}
+
+a.backtotop{
+  display: block;
+  text-align: center;
+}
