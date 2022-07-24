@@ -254,23 +254,34 @@ img{
      
 }
 
+a.menu{
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  text-decoration: none;
+
+
+}
+
 h1.menu{
   display: center;
   text-align: center;
   width: 500px;
   padding-top: 10px;
   padding-bottom  : 10px;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin:auto;
   border-bottom: solid 2px #2b2d2d;
   border-top: solid 2px #2b2d2d;
 }
 
 h2.menu{ 
-  color: black;
   display: center;
-  margin-left: 200px;
-  margin-right: 200px;
+  text-align: center;
+  width: 500px;
+  padding-top: 10px;
+  padding-bottom  : 10px;
+  margin:auto;
   border-bottom: solid 2px #2b2d2d;
   border-top: solid 2px #2b2d2d;
   
@@ -325,8 +336,8 @@ div.menu{
   div.contents{
     background: white;
     width: 1200px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     font-weight: bold;
     border: solid 3px #000000;
     text-align: left; 
@@ -342,13 +353,22 @@ ol{
 }
 
 ul.menu{
-    display: block;
+  
+  
+  margin: auto;
+  width: 500px;
+    display: center;
+    padding: 0px;
     list-style: none;
 }
 
 li.menu{
-  display: block;
-   list-style: none;
+  height: 60px;
+  line-height: 60px;
+  display: center;
+  list-style: none;
+  text-align: center;
+  
 }
 
 p{
