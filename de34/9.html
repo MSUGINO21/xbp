@@ -148,75 +148,104 @@
 </div>
   <h3 class="menu-contents">Arduinoのコード：</h3>
   <div class="details">
-  <code>
-    <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
-    <li style="background-color:#EFF;">int from_pc='0';</li>
-    <li style="background-color:#EEF;"></li>
-    <li style="background-color:#EFF;">int speaker_pin = 12;</li>
-    <li style="background-color:#EEF;"></li>
-    <li style="background-color:#EFF;">const int vol_pin = 0;</li>
-    <li style="background-color:#EEF;"></li>
-    <li style="background-color:#EFF;">#include &lt;Adafruit_NeoPixel.h&gt;</li>
-    <li style="background-color:#EEF;">#define PIN 13 // 信号用のピンを指定</li>
-    <li style="background-color:#EFF;">#define NUMPIXELS 12 // LEDの数を指定</li>
-    <li style="background-color:#EEF;">int brightness=20;//数値を変更して明るさ変更</li>
-    <li style="background-color:#EFF;">Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);</li>
-    <li style="background-color:#EEF;"></li>
-    <li style="background-color:#EFF;">void setup() {</li>
-    <li style="background-color:#EEF;">&nbsp;Serial.begin(9600);</li>
-    <li style="background-color:#EFF;">&nbsp;pixels.begin(); // NeoPixel出力ピンの初期化</li>
-    <li style="background-color:#EEF;">&nbsp;pixels.setBrightness(brightness);</li>
-    <li style="background-color:#EFF;">}</li>
-    <li style="background-color:#EEF;"></li>
-    <li style="background-color:#EFF;">void loop() {</li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;pixels.clear(); // すべてのLEDの色を0にセット</li>
-    <li style="background-color:#EFF;"></li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;int val=analogRead(vol_pin);</li>
-    <li style="background-color:#EFF;">&nbsp;&nbsp;Serial.println(val);</li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;delay(500);</li>
-    <li style="background-color:#EFF;">&nbsp;&nbsp;</li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;if(val&lt;1000){</li>
-    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;tone(12,val); </li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;}else{</li>
-    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;noTone(12);  </li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;}</li>
-    <li style="background-color:#EFF;"></li>
-    <li style="background-color:#EEF;">if(Serial.available() &gt; 0){</li>
-    <li style="background-color:#EFF;">&nbsp;from_pc = Serial.read();</li>
-    <li style="background-color:#EEF;">&nbsp;}</li>
-    <li style="background-color:#EFF;"></li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;if (from_pc=='1'){</li>
-    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(int i =0; i &lt; 12; i++){</li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(i, pixels.Color(0,255,255));}</li>
-    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.show();  </li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;}else if (from_pc=='2'){</li>
-    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(int i =0; i &lt; 12; i++){</li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(i, pixels.Color(127,255,212));}</li>
-    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.show(); </li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;}else if (from_pc=='3'){</li>
-    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(int i =0; i &lt; 12; i++){</li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(i, pixels.Color(0,255,127));}</li>
-    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.show(); </li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;}else if (from_pc=='4'){</li>
-    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(int i =0; i &lt; 12; i++){</li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(i, pixels.Color( 0,128,0));}</li>
-    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.show(); </li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;}else if (from_pc=='5'){</li>
-    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(int i =0; i &lt; 12; i++){</li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(i, pixels.Color(240,128,128));}</li>
-    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.show(); </li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;}else if (from_pc=='6'){</li>
-    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(int i =0; i &lt; 12; i++){</li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(i, pixels.Color(0,0,205));}</li>
-    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.show(); </li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;}else {</li>
-    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;for(int i =0; i &lt; 12; i++){</li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(i, pixels.Color( 255,255,255));}</li>
-    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.show(); </li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;</li>
-    <li style="background-color:#EFF;">&nbsp;&nbsp;}</li>
-    <li style="background-color:#EEF;">}</li>
-    </ol></code>
+    <code>
+      <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+      <li style="background-color:#EFF;">int from_pc='0';</li>
+      <li style="background-color:#EEF;">int speaker_pin = 12;</li>
+      <li style="background-color:#EFF;">const int vol_pin = 0;</li>
+      <li style="background-color:#EEF;">#include &lt;Adafruit_NeoPixel.h&gt;</li>
+      <li style="background-color:#EFF;">#define PIN 13 // 信号用のピンを指定</li>
+      <li style="background-color:#EEF;">#define NUMPIXELS 12 // LEDの数を指定</li>
+      <li style="background-color:#EFF;">int brightness=20;//数値を変更して明るさ変更</li>
+      <li style="background-color:#EEF;">Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);</li>
+      <li style="background-color:#EFF;">void setup() {</li>
+      <li style="background-color:#EEF;">&nbsp;Serial.begin(9600);</li>
+      <li style="background-color:#EFF;">&nbsp;pixels.begin(); // NeoPixel出力ピンの初期化</li>
+      <li style="background-color:#EEF;">&nbsp;pixels.setBrightness(brightness);</li>
+      <li style="background-color:#EFF;">}</li>
+      <li style="background-color:#EEF;">void loop() {</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;pixels.clear(); // すべてのLEDの色を0にセット</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;int val=analogRead(vol_pin);</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;Serial.println(val);</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;delay(500);</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;int i=0;</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;if(val&lt;1000){</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;tone(12,val);</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;}else{</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;noTone(12);</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+      <li style="background-color:#EEF;">if(Serial.available() &gt; 0){</li>
+      <li style="background-color:#EFF;">&nbsp;from_pc = Serial.read();</li>
+      <li style="background-color:#EEF;">&nbsp;}</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;if (from_pc=='1'){</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(0, pixels.Color(0,255,255));</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(2, pixels.Color(0,255,255));</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(4, pixels.Color(0,255,255));</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(6, pixels.Color(0,255,255));</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(8, pixels.Color(0,255,255));</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(10, pixels.Color(0,255,255));</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(12, pixels.Color(0,255,255));</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.show();</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;}else if (from_pc=='2'){</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(0, pixels.Color(127,255,212));</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(2, pixels.Color(127,255,212));</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(4, pixels.Color(127,255,212));</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(6, pixels.Color(127,255,212));</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(8, pixels.Color(127,255,212));</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(10, pixels.Color(127,255,212));</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(12, pixels.Color(127,255,212));</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.show();</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;}else if (from_pc=='3'){</li>
+      <li style="background-color:#EEF;">&nbsp;</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(0, pixels.Color(0,255,127));</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(2, pixels.Color(0,255,127));</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(4, pixels.Color(0,255,127));</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(6, pixels.Color(0,255,127));</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(8, pixels.Color(0,255,127));</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(10, pixels.Color(0,255,127));</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(12, pixels.Color(0,255,127));</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.show();</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;}else if (from_pc=='4'){</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(0, pixels.Color(0,128,0));</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(2, pixels.Color(0,128,0));</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(4, pixels.Color(0,128,0));</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(6, pixels.Color(0,128,0));</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(8, pixels.Color(0,128,0));</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(10, pixels.Color(0,128,0));</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(12, pixels.Color(0,128,0));</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.show();</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;}else if (from_pc=='5'){</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(0, pixels.Color(240,128,128));</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(2, pixels.Color(240,128,128));</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(4, pixels.Color(240,128,128));</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(6, pixels.Color(240,128,128));</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(8, pixels.Color(240,128,128));</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(10, pixels.Color(240,128,128));</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(12, pixels.Color(240,128,128));</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.show();</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;}else if (from_pc=='6'){</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(0, pixels.Color(0,0,205));</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(2, pixels.Color(0,0,205));</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(4, pixels.Color(0,0,205));</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(6, pixels.Color(0,0,205));</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(8, pixels.Color(0,0,205));</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(10, pixels.Color(0,0,205));</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(12, pixels.Color(0,0,205));</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.show();</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;}else {</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(0, pixels.Color(255,255,255));</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(2, pixels.Color(255,255,255));</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(4, pixels.Color(255,255,255));</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(6, pixels.Color(255,255,255));</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(8, pixels.Color(255,255,255));</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(10, pixels.Color(255,255,255));</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(12, pixels.Color(255,255,255));</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.show();</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;}</li>
+      <li style="background-color:#EFF;">}</li>
+      </ol></code>
   </div>
 <h3 class="menu-contents">反省・感想</h3>
 <div class="details">
