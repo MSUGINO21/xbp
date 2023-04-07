@@ -120,6 +120,16 @@ h2.menu{ color: black;
 h3{
     margin-left: 0px;
 }
+
+h3.menu-contents{
+    margin-left: 50px;
+}
+
+h4.menu-contents{
+    margin-left: 80px;
+}
+
+
 div{width: 300px;
     margin-top: 50px;
     margin-bottom: 50px;
