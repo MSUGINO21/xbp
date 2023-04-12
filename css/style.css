@@ -232,13 +232,14 @@ html, body {
     margin-right: 0px;
     margin-top: 0px;
     margin-bottom: 40px;
-	background: rgb(246, 253, 255);
+	background: white;
 }
+
 
 h1.logo{ background-color: rgb(0, 0, 0);
     text-align: center;
     margin: 0px;   
-    padding: 50px;
+    padding: 0px;
 }
 
 h1{ 
@@ -247,25 +248,37 @@ h1{
 }
 
 h1.course-title{
-  text-align: center;  
-  margin-left: 200px;
-  margin-right: 200px;
+  text-align: center; 
+  margin-top: 50px; 
+  margin-left: 300px;
+  margin-right: 300px;
   border-bottom: solid 2px #2b2d2d;
   border-top: solid 2px #2b2d2d;
-  padding: 11px 0;
+  padding: 0px;
   
 }
 
 h2{ color: black;
 }
 
+h2.classicon{ color: black;
+  margin: 0px;
+}
+
+
 h3{
   color: black;
 }
 
+header.toptitle{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
 div.portfoliolist{
-  margin-top: 100px;
+  margin: 0px;
   text-align: center; 
+  padding-top: 30px;
   
 }
 
@@ -273,36 +286,20 @@ div.editor{
   text-align: center; 
   display: block;
   margin: auto;
+  padding-top: 100px;
 }
 
 div.profile{
-
-  text-align: center;  
-  display: flex;
-}
-
-div.profile1{
-padding-top: 60px;
-}
-
-div.profile2{
+  text-align: center;
+    width: 900px;
+    list-style: none; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    padding: 20px;
   font-weight: bold;
   border: solid 3px #000000;
-  border-radius: 5%;
-  margin: 80px;
-  width: 1000px;
-  text-align: center;
   background-color: white;
-  }
-
-ul.navguide{
-
-  text-align: center;
-  display: flex;
-  list-style: none; 
-  margin-left: 100px;
-  margin-right: 100px;
-  padding: 50px;
 
 }
 
@@ -312,22 +309,52 @@ img.profile {
 
 ul.profile2{
   list-style: none; 
+
   padding: 10px;
 }
 
 li.profile2{
   text-align: left;
   padding: 10px;
-  margin-left: 50px;
 }
 
+div.navguide{
+
+    text-align: center;
+    width: 700px;
+    list-style: none; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    padding: 20px;
+  
+  font-weight: bold;
+  border: solid 3px #000000;
+  background-color: white;
+}
+
+ul.navguide{
+  display: flex;
+  list-style: none;
+  padding: auto;
+}
 
 li{
   text-align: center;
+  width: 400px;
+}
+
+li.icon{
+  width: 200px;
 }
 
 a{
   text-align: center;
 
+}
+
+img.classicon{
+  width: 60%;
+  padding: auto;
 }
 
