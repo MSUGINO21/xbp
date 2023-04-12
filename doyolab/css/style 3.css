@@ -333,6 +333,21 @@ div.menu{
     text-align: left; 
 }
 
+div.navguide{
+
+  text-align: center;
+  width: 700px;
+  list-style: none; 
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  padding: 20px;
+
+font-weight: bold;
+border: solid 3px #000000;
+background-color: white;
+}
+
 div.details{
   margin: 30px;
 }
@@ -341,6 +356,13 @@ div.details{
 ol{
     text-align: left;
 }
+
+ul.navguide{
+  display: flex;
+  list-style: none;
+  padding: auto;
+}
+
 
 ul.menu{
   margin: auto;
@@ -356,16 +378,29 @@ ul.basemenu{
   display: flex;
 }
 
+li.notelist{
+list-style: none;
+}
 
+
+
+li.icon{
+  width: 200px;
+  padding-right: 59px;
+}
 
 li.menu{
   height: 60px;
-
+ 
 
   display: center;
   list-style: none;
   text-align: center;
   
+}
+
+li.explication{
+  text-align: center;
 }
 
 li.basemenu{
@@ -375,6 +410,8 @@ li.basemenu{
   list-style: none;
   text-align: center;
 
+  border: solid 3px #000000;
+  background-color: white;
 }
 
 p{
@@ -411,6 +448,13 @@ a.backtotop{
   text-align: center;
 }
 
+
+h2.classicon{ color: black;
+  margin: 0px;
+  text-align: center;
+}
+
+
 h3.unittitle{
   margin-top: 30px;}
  
@@ -424,3 +468,4 @@ ul.basemenu{
   display: flex;
   list-style: none;
 }
+
