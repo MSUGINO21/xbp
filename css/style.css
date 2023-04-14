@@ -301,6 +301,19 @@ div.profile{
   border: solid 3px #000000;
   background-color: white;
 
+  animation-name: fade;
+  animation-duration: 1s;
+  
+}
+
+@keyframes fade{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 10;
+  }
+
 }
 
 img.profile {
@@ -331,6 +344,19 @@ div.navguide{
   font-weight: bold;
   border: solid 3px #000000;
   background-color: white;
+
+  animation-name: fade;
+  animation-duration: 1s;
+  
+}
+
+@keyframes fade{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 10;
+  }
 }
 
 ul.navguide{

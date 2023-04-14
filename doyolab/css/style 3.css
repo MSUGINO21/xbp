@@ -260,6 +260,7 @@ h1.menu{
   margin:auto;
   border-bottom: solid 2px #2b2d2d;
   border-top: solid 2px #2b2d2d;
+  
 }
 
 h2.menu{ 
@@ -280,6 +281,19 @@ h1.menu-contents{
   display: block; margin: auto;
   text-align: center;
 
+  animation-name: fade;
+  animation-duration: 1s;
+  
+}
+
+@keyframes fade{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 10;
+  }
+
 }
 
 h2.menu-contents{
@@ -296,7 +310,8 @@ h3.menu-contents{
   color: black;
   display: left;
   width: 500px;
-  
+ 
+
 }
 div{
     margin-top: 50px;
@@ -331,7 +346,20 @@ div.menu{
     font-weight: bold;
     border: solid 3px #000000;
     text-align: left; 
-}
+
+    animation-name: fade;
+    animation-duration: 1s;
+    
+  }
+  
+  @keyframes fade{
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 10;
+    }
+    }
 
 div.navguide{
 
