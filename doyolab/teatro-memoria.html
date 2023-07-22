@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+   
+    <title>杉野　演劇×デジファブ</title>
+   
+    <link rel="stylesheet" href="css/style 3.css">
+    <link rel="shortcut icon" href="images/logo.png">
+ 
+</head>
+<body>
+
+    <header id="header">
+        <nav>
+            <ul>
+              <li><a href="../index.html">Top</a></li>
+              <li class="navsmall"><a href="#">1st Year</a>
+                <ul>
+                <li><a href="../de12/index.html">デザイン演習Ⅰ・Ⅱ</a></li>
+                <li><a href="../digi_fab/index.html">デジタルファブリケーション</a></li>
+                </ul>
+            </li>
+    
+              <li class="navsmall"><a href="#">2nd Year</a>
+                <ul>
+                    <li><a href="../de34/index.html">デザイン演習Ⅲ・Ⅳ</a></li>
+                    <li><a href="../de56/index.html">デザイン演習Ⅴ・Ⅵ</a></li>
+                </ul>
+              </li>
+
+              <li><a href="https://kuxbp.github.io/xbp/xbp2021/">XBP一期生（外部サイト）</a></li>
+            </ul>
+          </nav>
+    
+          <img class="title" src="images/titlelogo.png" width="40%">
+            
+        </header>
+      
+        <h1 class="menu-contents">個人プロジェクト　演劇×デジファブ</h1>
+   
+
+<div class="contents">
+  <h2 class="menu-contents">観劇の思い出や考察をまとめておけるアプリ</h2>
+  <h3 class="menu-contents">背景</h3>
+  <p>
+　観劇が趣味の人は、ただ劇を観るだけでなく、好きなキャラや俳優、演出などの詳細に記述して思い出・感動を大切にする傾向<br>
+例）Twitterの観劇専用アカウント<br>
+※人によっては同じ舞台を何度も観に行って日毎の演出の違いを詳細に書き連ねたり、<br>
+舞台で明確に示されていない背景を、舞台となった場所の歴史や文化を調べ上げてメモを作る人も<br>
+<br>
+しかし、Twitterの投稿は文字数が限られていたり、投稿から日付が経つとどんどん投稿が流れて行ったりして、<br>
+「〇〇の観劇を遡りたい」と思っても遡るのは結構大変<br>
+<br>
+→例えば、舞台ごとに観劇者個人の思い出を詰め込んだアプリを作れないか
+  <h3 class="menu-contents">やったこと</h3>
+  <p>
+    段階１. 日記のシステムを作ってみる<br>
+
+    chat GPTの助けを借りてpythonでシステムを作ってみる<br>
+    <code>
+      <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+      <li style="background-color:#EFF;">import os</li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">class Diary:</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self):</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.entries = []</li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def add_entry(self, entry):</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.entries.append(entry)</li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;def get_entries(self):</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.entries</li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def save_entries_to_file(self, filename):</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with open(filename, 'w') as file:</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for entry in self.entries:</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file.write(entry.to_string() + '\n')</li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;def load_entries_from_file(self, filename):</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.entries = []</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if os.path.exists(filename):</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with open(filename, 'r') as file:</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for line in file:</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entry = DiaryEntry.from_string(line)</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if entry:</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_entry(entry)</li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def remove_entry_by_title(self, title_to_remove):</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.entries = [entry for entry in self.entries if entry.title != title_to_remove]</li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;# ... (existing code)</li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">class DiaryEntry:</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, title, date, content, notes):</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.title = title</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.date = date</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.content = content</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.notes = notes</li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;def to_string(self):</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return f"{self.title},{self.date},{self.content},{self.notes}"</li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;@staticmethod</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;def from_string(entry_string):</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fields = entry_string.strip().split(',')</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if len(fields) == 4:</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return DiaryEntry(fields[0], fields[1], fields[2], fields[3])</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return None</li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">def main_menu(diary):</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;while True:</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("=== メインメニュー ===")</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("1. 日記を書く")</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("2. 書いた日記のリストを見る")</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("3. 日記を削除する (タイトルで検索)")</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("0. 終了")</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;choice = input("選択肢を入力してください: ")</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if choice == '1':</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write_diary(diary)</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif choice == '2':</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;view_entries(diary)</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif choice == '3':</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;remove_entry_by_title(diary)</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif choice == '0':</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("無効な選択肢です。もう一度選んでください。")</li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;">def write_diary(diary):</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;print("=== 日記を書く ===")</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;title = input("タイトルを入力してください: ")</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;date = input("日付を入力してください: ")</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;content = input("本文を入力してください: ")</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;notes = input("備考を入力してください: ")</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;entry = DiaryEntry(title, date, content, notes)</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;diary.add_entry(entry)</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;print("日記が保存されました。")</li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">def view_entries(diary):</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;print("=== 書いた日記のリスト ===")</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;entries = diary.get_entries()</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;if not entries:</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("日記がまだありません。")</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;for index, entry in enumerate(entries, start=1):</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(f"{index}. {entry.title} - {entry.date}")</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;choice = input("詳細を見る日記の番号を入力してください (0: 戻る): ")</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;if choice == '0':</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;try:</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index = int(choice) - 1</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entry = entries[index]</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;view_entry_details(entry)</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;except (ValueError, IndexError):</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("無効な選択肢です。もう一度選んでください。")</li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;">def view_entry_details(entry):</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;print("=== 日記の詳細 ===")</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;print(f"タイトル: {entry.title}")</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;print(f"日付: {entry.date}")</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;print(f"本文: {entry.content}")</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;print(f"備考: {entry.notes}")</li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">def remove_entry_by_title(diary):</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;print("=== 日記の削除 ===")</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;title_to_remove = input("削除する日記のタイトルを入力してください: ")</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;diary.remove_entry_by_title(title_to_remove)</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;print(f"タイトルが '{title_to_remove}' の日記が削除されました。")</li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;"># メインの実行部分</li>
+      <li style="background-color:#EEF;">def main():</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;diary = Diary()</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;filename = 'diary_entries.txt'  # ファイル名は必要に応じて変更してください</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;diary.load_entries_from_file(filename)</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;main_menu(diary)</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;diary.save_entries_to_file(filename)</li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">if __name__ == '__main__':</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;main()</li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;"></li>
+      </ol></code>
+  イメージ画像<br>
+  <img class="photo" src="images/230722-2.png" width="40%" margin="50px">
+  <img class="photo" src="images/230722-3.png" width="40%" margin="50px">
+  <img class="photo" src="images/230722-4.png" width="40%" margin="50px">
+</p>
+ 
+  
+
+
+<br>
+<a class="backtotop" href="../doyolab/teatro.html">前のページに戻る</a>
+
+</body>
+</html>
