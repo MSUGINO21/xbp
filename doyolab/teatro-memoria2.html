@@ -44,9 +44,13 @@
  
   <h3 class="menu-contents">2. 観劇ハッシュタグのリンクアプリ</h3>
   <p>
+    自分の過去のツイートから特定の舞台のハッシュタグだけ登録して観劇感想ツイート検索できないか
+  </p>
+  <p>
+    イメージ画像　（身バレ防止であえて個人アカウント名表示しないようにしています）
     <iframe width="560" height="315" src="https://www.youtube.com/embed/y14SKD31dEU?si=SSZQavuStgc13a9Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
     chat GPTの助けを借りてpythonでシステムを作ってみる<br>
-    好きなハッシュタグのボタンを作って、押したらリンクに飛べる段階まではできた<br>
+    好きなハッシュタグのボタンを作って、押したら自分の投稿からリンクに飛べる段階まではできた<br>
     日本語入力ができない　→ 日本語入力可にする必要がある
     <code>
       <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
@@ -58,41 +62,53 @@
       <li style="background-color:#EEF;">import webbrowser</li>
       <li style="background-color:#EFF;">kivy.require('1.11.1')</li>
       <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">class LinkOpenerApp(App):</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, **kwargs):</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super().__init__(**kwargs)</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.links = []</li>
       <li style="background-color:#EFF;"></li>
-      <li style="background-color:#EEF;">class LinkOpenerApp(App):</li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, **kwargs):</li>
-      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super().__init__(**kwargs)</li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.links = []</li>
-      <li style="background-color:#EEF;"></li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def build(self):</li>
-      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout = BoxLayout(orientation='vertical')</li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.input_text = TextInput(</li>
-      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hint_text='enter a hashtag without "#"')</li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_button = Button(text='creat')</li>
-      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_button.bind(on_press=self.add_link)</li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout.add_widget(self.input_text)</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;def build(self):</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout = BoxLayout(orientation='vertical')</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.input_text1 = TextInput(</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hint_text='enter your account name without "@"')</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.input_text2 = TextInput(</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hint_text='enter a hashtag without "#"')</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_button = Button(text='create')</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_button.bind(on_press=self.add_link)</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.remove_button = Button(text='remove')</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.remove_button.bind(on_press=self.remove_link)</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout.add_widget(self.input_text1)</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout.add_widget(self.input_text2)</li>
       <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout.add_widget(self.add_button)</li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.layout</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout.add_widget(self.remove_button)</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.layout</li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;def add_link(self, instance):</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hashtag = self.input_text2.text.strip()</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if hashtag:</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;link_button = Button(text=f'#{hashtag}')</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;link_button.bind(on_press=lambda x, link=hashtag: self.open_link(link))</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.links.append(link_button)</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout.add_widget(link_button)</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.input_text2.text = ''</li>
       <li style="background-color:#EEF;"></li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def add_link(self, instance):</li>
-      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hashtag = self.input_text.text.strip()</li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if hashtag:</li>
-      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;link_button = Button(text=f'#{hashtag}')</li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;link_button.bind(on_press=lambda x, link=hashtag: self.open_link(link))</li>
-      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.links.append(link_button)</li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout.add_widget(link_button)</li>
-      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.input_text.text = ''</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def remove_link(self, instance):</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if self.links:</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;last_link_button = self.links.pop()</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout.remove_widget(last_link_button)</li>
       <li style="background-color:#EFF;"></li>
       <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;def open_link(self, hashtag):</li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if hashtag:</li>
-      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;search_url = f'https://twitter.com/search?q=%23{hashtag}'</li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;webbrowser.open(search_url)</li>
-      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;acn = self.input_text1.text.strip()</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if hashtag:</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;search_url = f'https://twitter.com/search?q=from%3A{acn}%20%23{hashtag}&amp;src=typed_query&amp;f=top'</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;webbrowser.open(search_url)</li>
       <li style="background-color:#EFF;"></li>
       <li style="background-color:#EEF;">if __name__ == '__main__':</li>
       <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;LinkOpenerApp().run()</li>
-      <li style="background-color:#EEF;"></li>
       </ol></code>
+      <br>
+      イメージ画像<br>
+      <img class="photo" src="images/230901.png" width="60%" margin="50px">
 </p>
  
   
