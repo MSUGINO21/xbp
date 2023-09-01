@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+   
+    <title>杉野　演劇×デジファブ</title>
+   
+    <link rel="stylesheet" href="css/style 3.css">
+    <link rel="shortcut icon" href="images/logo.png">
+ 
+</head>
+<body>
+
+    <header id="header">
+        <nav>
+            <ul>
+              <li><a href="../index.html">Top</a></li>
+              <li class="navsmall"><a href="#">1st Year</a>
+                <ul>
+                <li><a href="../de12/index.html">デザイン演習Ⅰ・Ⅱ</a></li>
+                <li><a href="../digi_fab/index.html">デジタルファブリケーション</a></li>
+                </ul>
+            </li>
+    
+              <li class="navsmall"><a href="#">2nd Year</a>
+                <ul>
+                    <li><a href="../de34/index.html">デザイン演習Ⅲ・Ⅳ</a></li>
+                    <li><a href="../de56/index.html">デザイン演習Ⅴ・Ⅵ</a></li>
+                </ul>
+              </li>
+
+              <li><a href="https://kuxbp.github.io/xbp/xbp2021/">XBP一期生（外部サイト）</a></li>
+            </ul>
+          </nav>
+    
+          <img class="title" src="images/titlelogo.png" width="40%">
+            
+        </header>
+      
+        <h1 class="menu-contents">個人プロジェクト　演劇×デジファブ</h1>
+   
+
+<div class="contents">
+  <h2 class="menu-contents">観劇の思い出や考察をまとめておけるアプリ</h2>
+ 
+  <h3 class="menu-contents">2. 観劇ハッシュタグのリンクアプリ</h3>
+  <p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/y14SKD31dEU?si=SSZQavuStgc13a9Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
+    chat GPTの助けを借りてpythonでシステムを作ってみる<br>
+    好きなハッシュタグのボタンを作って、押したらリンクに飛べる段階まではできた<br>
+    日本語入力ができない　→ 日本語入力可にする必要がある
+    <code>
+      <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+      <li style="background-color:#EFF;">import kivy</li>
+      <li style="background-color:#EEF;">from kivy.app import App</li>
+      <li style="background-color:#EFF;">from kivy.uix.boxlayout import BoxLayout</li>
+      <li style="background-color:#EEF;">from kivy.uix.textinput import TextInput</li>
+      <li style="background-color:#EFF;">from kivy.uix.button import Button</li>
+      <li style="background-color:#EEF;">import webbrowser</li>
+      <li style="background-color:#EFF;">kivy.require('1.11.1')</li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;">class LinkOpenerApp(App):</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, **kwargs):</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super().__init__(**kwargs)</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.links = []</li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def build(self):</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout = BoxLayout(orientation='vertical')</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.input_text = TextInput(</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hint_text='enter a hashtag without "#"')</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_button = Button(text='creat')</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_button.bind(on_press=self.add_link)</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout.add_widget(self.input_text)</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout.add_widget(self.add_button)</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.layout</li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def add_link(self, instance):</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hashtag = self.input_text.text.strip()</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if hashtag:</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;link_button = Button(text=f'#{hashtag}')</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;link_button.bind(on_press=lambda x, link=hashtag: self.open_link(link))</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.links.append(link_button)</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout.add_widget(link_button)</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.input_text.text = ''</li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;def open_link(self, hashtag):</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if hashtag:</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;search_url = f'https://twitter.com/search?q=%23{hashtag}'</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;webbrowser.open(search_url)</li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;">if __name__ == '__main__':</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;LinkOpenerApp().run()</li>
+      <li style="background-color:#EEF;"></li>
+      </ol></code>
+</p>
+ 
+  
+
+
+<br>
+<a class="backtotop" href="../doyolab/teatro.html">前のページに戻る</a>
+
+</body>
+</html>
