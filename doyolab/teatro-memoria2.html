@@ -118,12 +118,66 @@
  
 <p>次に取り組むこと
   <ul>
-    <li>日本語入力に対応</li>
+    <li>日本語入力に対応：</li>
     <li>スマホアプリにするには</li>
     <li>食べログみたいな、劇団の紹介プラットフォームできないのか</li>
     <li>観劇後に劇団からメッセージを送れないのか</li>
     <li>キーホルダーのデザイン（チケット型？　ポスター型？　ブロマイドやチケットを挟み込める形？</li>
   </ul>
+</p>
+
+<p>
+  <h3 class="menu-contents">日本語入力・検索できない問題</h3>
+  参考：<a href="https://blog.amedama.jp/entry/japanize-kivy">Python: インポートするだけで Kivy が日本語を表示できるようになる japanize-kivy を作った（外部サイト）</a>
+
+
+  <code>
+    <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+    <li style="background-color:#EFF;">import japanize_kivy</li>
+    <li style="background-color:#EEF;">import webbrowser</li>
+    <li style="background-color:#EFF;">import urllib.parse</li>
+    <li style="background-color:#EEF;">from kivy.app import App</li>
+    <li style="background-color:#EFF;">from kivy.uix.boxlayout import BoxLayout</li>
+    <li style="background-color:#EEF;">from kivy.uix.textinput import TextInput</li>
+    <li style="background-color:#EFF;">from kivy.uix.button import Button</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">class TweetSearchApp(App):</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def search_tweets(self, instance):</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# テキストボックスから入力されたテキストを取得</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;search_term = self.text_input.text</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 検索クエリをURLエンコード</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;encoded_search_term = urllib.parse.quote(search_term, safe='')</li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 検索URLを生成（UTF-8エンコーディングを指定）</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;search_url = f"https://www.google.com/search?q={encoded_search_term}&amp;ie=UTF-8"</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# ブラウザで検索結果を表示</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;webbrowser.open(search_url)</li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;def build(self):</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# レイアウトを作成</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layout = BoxLayout(orientation='vertical', padding=10)</li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# テキストボックスを作成</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.text_input = TextInput(hint_text='検索したいワードを入力してください', multiline=False)</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 検索ボタンを作成</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;search_button = Button(text='検索')</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;search_button.bind(on_press=self.search_tweets)</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# テキストボックスと検索ボタンをレイアウトに追加</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layout.add_widget(self.text_input)</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layout.add_widget(search_button)</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return layout</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">if __name__ == '__main__':</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;TweetSearchApp().run()</li>
+    <li style="background-color:#EEF;"></li>
+    </ol></code>
 </p>
 
 
