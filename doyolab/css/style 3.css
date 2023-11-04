@@ -500,3 +500,16 @@ ul.basemenu{
   list-style: none;
 }
 
+.more1 {
+  display: none;
+}
+.more1:target {
+  display: block;
+}
+
+.more2 {
+  display: none;
+}
+.more2:target {
+  display: block;
+}
