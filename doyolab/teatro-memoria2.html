@@ -133,6 +133,9 @@
   </ul>
 </p>
 
+<h3 class="menu-contents">やったこと</h3>
+<ol>
+<li>
 <a href="#more2">日本語入力・検索できない問題▽</a>
     <div class="more2" id="more2">
 
@@ -210,8 +213,9 @@
   </p>
     <a href="#close">閉じる△</a><br>
     </div>
+  </li>
     
-    <br>
+  <li>
     <a href="#more3">ボタンの色付けや画面のレイアウト▽</a>
     <div class="more3" id="more3">
     
@@ -317,9 +321,130 @@
 </p>
 <a href="#close">閉じる△</a><br>
 </div>
-<br>
-<a href="#more4">  スマホアプリにするには▽</a>
+</li>
+
+<li>
+<a href="#more4"> ボタン登録画面と検索ボタン陳列画面を分ける▽</a>
 <div class="more4" id="more4">
+
+  kivy Screen Manage：複数の画面を管理するウィジェット。デフォルトだと一つの画面を表示した中で別の画面に切り替わることができる。<br>
+<br>
+python<br>
+<code>
+  <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+  <li style="background-color:#EFF;">from kivy.app import App</li>
+  <li style="background-color:#EEF;">from kivy.uix.boxlayout import BoxLayout</li>
+  <li style="background-color:#EFF;">from kivy.uix.textinput import TextInput</li>
+  <li style="background-color:#EEF;">from kivy.uix.button import Button</li>
+  <li style="background-color:#EFF;">from kivy.uix.screenmanager import ScreenManager, Screen</li>
+  <li style="background-color:#EEF;">import webbrowser</li>
+  <li style="background-color:#EFF;">import japanize_kivy</li>
+  <li style="background-color:#EEF;">import urllib.parse</li>
+  <li style="background-color:#EFF;">class MyApp(App):</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;def build(self):</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return MyBoxLayout()</li>
+  <li style="background-color:#EEF;">class MyBoxLayout(BoxLayout):</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, **kwargs):</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(MyBoxLayout, self).__init__(**kwargs)</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.orientation = 'vertical'</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.button_create = Button(text='create', on_press=self.show_page_1)</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.button_showlist = Button(text='showlist', on_press=self.show_page_2)</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.button_close = Button(text='close', on_press=self.close_app)</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_widget(self.button_create)</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_widget(self.button_showlist)</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_widget(self.button_close)</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.screen_manager = ScreenManager()</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.page_1 = Page1(name='page_1')</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.page_2 = Page2(name='page_2')</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.screen_manager.add_widget(self.page_1)</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.screen_manager.add_widget(self.page_2)</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_widget(self.screen_manager)</li>
+  <li style="background-color:#EEF;"></li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def show_page_1(self, instance):</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.screen_manager.current = 'page_1'</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def show_page_2(self, instance):</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.screen_manager.current = 'page_2'</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def close_app(self, instance):</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;App.get_running_app().stop()</li>
+  <li style="background-color:#EFF;"></li>
+  <li style="background-color:#EEF;">class Page1(Screen):</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, **kwargs):</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(Page1, self).__init__(**kwargs)</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout = BoxLayout(orientation='vertical')</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.text_input1 = TextInput(hint_text='enter your account name without "@"')</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.text_input2 = TextInput(hint_text='enter a hashtag without "#"')</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.button_add = Button(text='add', on_press=self.add_yellow_button)</li>
+  <li style="background-color:#EFF;"></li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout.add_widget(self.text_input1)</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout.add_widget(self.text_input2)</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout.add_widget(self.button_add)</li>
+  <li style="background-color:#EFF;"></li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_widget(self.layout)</li>
+  <li style="background-color:#EFF;"></li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;def add_yellow_button(self, instance):</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;page_2 = self.manager.get_screen('page_2')</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hashtag = self.text_input2.text</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yellow_button = Button(text=f'{hashtag}', on_press=self.search_google)</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;page_2.layout.add_widget(yellow_button)</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def go_to_page_1(self, instance):</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.manager.current = 'page_1'</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def search_google(self, instance):</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;acn = self.text_input1.text</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hashtag = self.text_input2.text</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hst = urllib.parse.quote(hashtag) # キーワードをエンコード</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;webbrowser.open(f'https://twitter.com/search?q=from%3A{acn}%20%23{hst}&amp;src=typed_query&amp;f=top')</li>
+  <li style="background-color:#EEF;">class Page2(Screen):</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, **kwargs):</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(Page2, self).__init__(**kwargs)</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout = BoxLayout(orientation='vertical')</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_widget(self.layout)</li>
+  <li style="background-color:#EFF;">if __name__ == '__main__':</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;MyApp().run()</li>
+  <li style="background-color:#EFF;"></li>
+  </ol></code>
+<br>
+kivy<br>
+<code>
+  <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+  <li style="background-color:#EFF;">&lt;MyBoxLayout&gt;:</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;orientation: 'vertical'</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;Button:</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text: 'red'</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on_press: root.show_page_1(self)</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;Button:</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text: 'green'</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on_press: root.show_page_2(self)</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;Button:</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text: 'blue'</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on_press: root.close_app(self)</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;ScreenManager:</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id: screen_manager</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Screen:</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: 'page_1'</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BoxLayout:</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orientation: 'vertical'</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TextInput:</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hint_text: 'Enter memo here'</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Button:</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text: 'black'</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on_press: root.page_1.add_yellow_button(self)</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Button:</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text: 'white'</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on_press: root.page_1.go_to_page_1(self)</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Screen:</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: 'page_2'</li>
+  <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BoxLayout:</li>
+  <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orientation: 'vertical'</li>
+  <li style="background-color:#EEF;"></li>
+  </ol></code>
+
+<a href="#close">閉じる△</a><br>
+</div>
+</li>
+
+<li>
+<a href="#more5">  スマホアプリにするには▽</a>
+<div class="more5" id="more5">
 
   Pythonアプリをスマホアプリに変換するには、apkファイルにパッケージ化する必要がある。パッケージ化はBuildozerというツールを使う。<br>
   apkファイルをスマホにダウンロードしてインストールすればスマホアプリとして使える。<br>
@@ -339,14 +464,17 @@
       <li>ホーム画面にkivyのマーク（モノクロのクロワッサンみたいなやつ）が出てくるので、それをタップするとアプリが開く</li>
     </ol>
   </p>
+
   
   
 
 <a href="#close">閉じる△</a><br>
 </div>
-<br>
-<a href="#more5">  Change Makers Community▽</a>
-<div class="more5" id="more5">
+</li>
+
+<li>
+<a href="#more6">  Change Makers Community▽</a>
+<div class="more6" id="more6">
 
   小劇場そのものを知ってもらうために、上の作成中のアプリの話＋一緒に小劇場いくコミュニティを作ろうとする<br>
 <a href="files/CMCppt-sm.pptx">発表PDF</a><br>
@@ -354,8 +482,8 @@
 
 <a href="#close">閉じる△</a><br>
 </div>
-
-
+</li>
+</ol>
 
 <br>
 <a class="backtotop" href="../doyolab/teatro.html">前のページに戻る</a>
