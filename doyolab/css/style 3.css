@@ -541,3 +541,24 @@ ul.basemenu{
 .more6:target {
   display: block;
 }
+
+.more7 {
+  display: none;
+}
+.more7:target {
+  display: block;
+}
+
+.more8 {
+  display: none;
+}
+.more8:target {
+  display: block;
+}
+
+.more9 {
+  display: none;
+}
+.more9:target {
+  display: block;
+}
