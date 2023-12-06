@@ -469,7 +469,7 @@ kivy<br>
 </li>
 
 <li>
-  <a href="#more6">  csvに入力データを残す▽</a>
+  <a href="#more6">  csvに入力データを残す・再起動後の復元▽</a>
   <div class="more6" id="more6">
     <code>
       <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
@@ -482,11 +482,9 @@ kivy<br>
       <li style="background-color:#EFF;">import webbrowser</li>
       <li style="background-color:#EEF;">import japanize_kivy</li>
       <li style="background-color:#EFF;">import urllib.parse</li>
-      <li style="background-color:#EEF;"></li>
-      <li style="background-color:#EFF;">class MyApp(App):</li>
-      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;def build(self):</li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return MyBoxLayout()</li>
-      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EEF;">class MyApp(App):</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def build(self):</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return MyBoxLayout()</li>
       <li style="background-color:#EFF;">class MyBoxLayout(BoxLayout):</li>
       <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, **kwargs):</li>
       <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(MyBoxLayout, self).__init__(**kwargs)</li>
@@ -494,46 +492,36 @@ kivy<br>
       <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.button_create = Button(text='create', on_press=self.show_page_1)</li>
       <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.button_showlist = Button(text='showlist', on_press=self.show_page_2)</li>
       <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.button_close = Button(text='close', on_press=self.close_app)</li>
-      <li style="background-color:#EEF;"></li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_widget(self.button_create)</li>
-      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_widget(self.button_showlist)</li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_widget(self.button_close)</li>
-      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_widget(self.button_create)</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_widget(self.button_showlist)</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_widget(self.button_close)</li>
       <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.screen_manager = ScreenManager()</li>
       <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.page_1 = Page1(name='page_1')</li>
       <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.page_2 = Page2(name='page_2')</li>
       <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.screen_manager.add_widget(self.page_1)</li>
       <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.screen_manager.add_widget(self.page_2)</li>
       <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_widget(self.screen_manager)</li>
-      <li style="background-color:#EFF;"></li>
-      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;def show_page_1(self, instance):</li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.screen_manager.current = 'page_1'</li>
-      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def show_page_1(self, instance):</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.screen_manager.current = 'page_1'</li>
       <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def show_page_2(self, instance):</li>
       <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.screen_manager.current = 'page_2'</li>
-      <li style="background-color:#EFF;"></li>
-      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;def close_app(self, instance):</li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;App.get_running_app().stop()</li>
-      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def close_app(self, instance):</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;App.get_running_app().stop()</li>
       <li style="background-color:#EFF;">class Page1(Screen):</li>
       <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, **kwargs):</li>
       <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(Page1, self).__init__(**kwargs)</li>
       <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout = BoxLayout(orientation='vertical')</li>
-      <li style="background-color:#EFF;"></li>
-      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.text_input1 = TextInput(hint_text='enter your account name without "@"')</li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.button_add_acn = Button(text='add', on_press=self.add_acn)</li>
-      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.text_input2 = TextInput(hint_text='enter a hashtag without "#"')</li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.button_add_ht = Button(text='green', on_press=self.add_green_button)</li>
-      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.text_input1 = TextInput(hint_text='enter your account name without "@"')</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.button_add_acn = Button(text='add', on_press=self.add_acn)</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.text_input2 = TextInput(hint_text='enter a hashtag without "#"')</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.button_add_ht = Button(text='green', on_press=self.add_green_button)</li>
       <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout.add_widget(self.text_input1)</li>
       <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout.add_widget(self.button_add_acn)</li>
       <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout.add_widget(self.text_input2)</li>
       <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout.add_widget(self.button_add_ht)</li>
       <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_widget(self.layout)</li>
-      <li style="background-color:#EEF;"></li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def add_acn(self, instance):</li>
-      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;acn = self.text_input1.text</li>
-      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;def add_acn(self, instance):</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;acn = self.text_input1.text</li>
       <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# CSVファイルの読み込み</li>
       <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;existing_data = []</li>
       <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:</li>
@@ -549,11 +537,9 @@ kivy<br>
       <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 既存のデータを書き込む</li>
       <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for row in existing_data[1:]:</li>
       <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;csv_writer.writerow(row)</li>
-      <li style="background-color:#EFF;"></li>
-      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;def add_green_button(self, instance):</li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;page_2 = self.manager.get_screen('page_2')</li>
-      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hashtag = self.text_input2.text.strip()</li>
-      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def add_green_button(self, instance):</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;page_2 = self.manager.get_screen('page_2')</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hashtag = self.text_input2.text.strip()</li>
       <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# CSVファイルの読み込み</li>
       <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;existing_data = []</li>
       <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:</li>
@@ -566,17 +552,11 @@ kivy<br>
       <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with open('list.csv', 'a', newline='') as csvfile:</li>
       <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;csv_writer = csv.writer(csvfile)</li>
       <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;csv_writer.writerow(['', hashtag])</li>
-      <li style="background-color:#EEF;"></li>
-      <li style="background-color:#EFF;"></li>
       <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;green_button = Button(text=f'{hashtag}', on_press=lambda instance: self.search_google(hashtag))</li>
       <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;page_2.layout.add_widget(green_button)</li>
-      <li style="background-color:#EEF;"></li>
-      <li style="background-color:#EFF;"></li>
       <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;def go_to_page_1(self, instance):</li>
       <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.manager.current = 'page_1'</li>
-      <li style="background-color:#EEF;"></li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def search_google(self, hashtag):</li>
-      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;def search_google(self, hashtag):</li>
       <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:</li>
       <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with open('list.csv', 'r') as csvfile:</li>
       <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;csv_reader = csv.reader(csvfile)</li>
@@ -584,18 +564,35 @@ kivy<br>
       <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Assuming the Twitter account name is in the first row of the CSV file</li>
       <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;account_name = existing_data[0][0]</li>
       <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except FileNotFoundError:</li>
-      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;account_name = ''  # Default to an empty string if the file is not found</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;account_name = '' # Default to an empty string if the file is not found</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hst = urllib.parse.quote(hashtag) # キーワードをエンコード</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;webbrowser.open(f'https://twitter.com/search?q=from%3A{account_name}%20%23{hst}&amp;src=typed_query&amp;f=top')</li>
       <li style="background-color:#EFF;"></li>
-      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hst = urllib.parse.quote(hashtag) # キーワードをエンコード</li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;webbrowser.open(f'https://twitter.com/search?q=from%3A{account_name}%20%23{hst}&amp;src=typed_query&amp;f=top')</li>
+      <li style="background-color:#EEF;">class Page2(Screen):</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, **kwargs):</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(Page2, self).__init__(**kwargs)</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout = BoxLayout(orientation='vertical')</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_widget(self.layout)</li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Load data from list.csv and create buttons</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with open('list.csv', 'r') as csvfile:</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;csv_reader = csv.reader(csvfile)</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;existing_data = list(csv_reader)</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Assuming hashtags are in the second column (index 1) of the CSV file</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hashtags = [row[1] for row in existing_data[1:]]</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.create_buttons(hashtags)</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except FileNotFoundError:</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pass  # File not found, no buttons to create</li>
       <li style="background-color:#EEF;"></li>
-      <li style="background-color:#EFF;">class Page2(Screen):</li>
-      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, **kwargs):</li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(Page2, self).__init__(**kwargs)</li>
-      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout = BoxLayout(orientation='vertical')</li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.add_widget(self.layout)</li>
-      <li style="background-color:#EEF;">if __name__ == '__main__':</li>
-      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;MyApp().run()</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;def create_buttons(self, hashtags):</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for hashtag in hashtags:</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;green_button = Button(text=f'{hashtag}', on_press=lambda instance: self.search_google(hashtag))</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.layout.add_widget(green_button)</li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">if __name__ == '__main__':</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;MyApp().run()</li>
       </ol></code>
     <br>
   
