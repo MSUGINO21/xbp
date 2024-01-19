@@ -46,8 +46,11 @@
 
 <div class="contents">
   <h2 class="menu-contents">観劇の思い出や考察をまとめておけるアプリ</h2>
+
+  <p>私がAndroid系スマホユーザーなので、今回はAndroid Studioを使ってアプリを作ってみる。<br>
+  参考教材：<a href="https://www.shoeisha.co.jp/book/detail/9784798178998">いきなりプログラミング Androidアプリ開発</a></p>
  
-  <h3 class="menu-contents">3. 来場者スタンプ代わりのアプリ</h3>
+  <h3 class="menu-contents">1. 来場者スタンプ代わりのアプリ</h3>
   <p>
     舞台好きの中には多ステ（一つの演目で複数回鑑賞すること）するファンもいる。そのようなお客さんにより来場してもらえるように<br>
     来場スタンプをつくり、複数回来たお客さんにノベルティをプレゼントしたり、割引をしたりしている劇団もある。<br>
@@ -253,6 +256,7 @@
 
   </li>
 </ul>
+
 <p>次に取り組むこと
   <ul>
     <li>データの保存</li>
@@ -260,9 +264,242 @@
     
   </ul>
 </p>
+<h3 class="menu-contents">2. 撮影可能な舞台で撮影した写真を見られるアプリ</h3>
+  <p>
+    舞台やイベントによっては上演中の撮影が可能な場合がある。普通にスマホのカメラロールに画像を入れたままでもいいが、<br>
+    せっかくならコメントとかつけて閲覧できたら後から色々思い出して楽しい気持ちになれるかもしれない？
+    
 
+  </p>
 
+  <h3 class="menu-contents">やったこと</h3>
+  <p>
+    
+    <a href="https://youtube.com/shorts/2AG3lGR3yQc">動いてる様子</a>
+  </p>
 
+  <ul>
+    <li>
+  <a href="#more4">actibity_main.xml▽</a>
+  <div class="more4" id="more4">
+  
+    <code>
+      <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+      <li style="background-color:#EFF;">&lt;?xml version="1.0" encoding="utf-8"?&gt;</li>
+      <li style="background-color:#EEF;">&lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;xmlns:app="http://schemas.android.com/apk/res-auto"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;xmlns:tools="http://schemas.android.com/tools"</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="match_parent"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="match_parent"</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;android:contentDescription="@string/btn_left"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;tools:context=".MainActivity"&gt;</li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;ImageView</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id="@+id/imageView"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="0dp"</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="0dp"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:background="@color/black"</li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintBottom_toBottomOf="parent"</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintEnd_toEndOf="parent"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintHorizontal_bias="0.0"</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintStart_toStartOf="parent"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintTop_toTopOf="parent"</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintVertical_bias="0.0"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tools:ignore="contentDescription" /&gt;</li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;ImageButton</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id="@+id/BtnLeft"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="48dp"</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="48dp"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:background="@color/white60"</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:contentDescription="@string/btn_left"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:src="@drawable/baseline_chevron_left_24"</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintBottom_toBottomOf="@+id/imageView"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintLeft_toLeftOf="parent"</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintRight_toRightOf="parent"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintStart_toStartOf="parent"</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintTop_toTopOf="parent"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintVertical_bias="0.9" /&gt;</li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;ImageButton</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id="@+id/BtnRight"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="48dp"</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="48dp"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:background="@color/white60"</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:contentDescription="@string/btn_right"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:src="@drawable/baseline_chevron_right_24"</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintBottom_toBottomOf="parent"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintEnd_toEndOf="parent"</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintTop_toTopOf="parent"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintVertical_bias="0.9"</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tools:ignore="contentDescription" /&gt;</li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;TextView</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id="@+id/textView"</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="0dp"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="wrap_content"</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_marginStart="16dp"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_marginEnd="16dp"</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:background="@color/black90"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:padding="8dp"</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:textColor="@color/white"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintBottom_toBottomOf="parent"</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintEnd_toStartOf="@+id/BtnRight"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintHorizontal_bias="0.0"</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintStart_toEndOf="@+id/BtnLeft"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintTop_toTopOf="parent"</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintVertical_bias="0.883"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tools:text="test" /&gt;</li>
+      <li style="background-color:#EFF;">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</li>
+      </ol></code>
+    <a href="#close">閉じる△</a><br>
+  </div>  
+</li>
+
+<li>
+  <a href="#more5">strings.xml▽</a>
+  <div class="more5" id="more5">
+    <code>
+      <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+      <li style="background-color:#EFF;">&lt;resources&gt;</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;string name="app_name"&gt;slite&lt;/string&gt;</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;string name="btn_left"&gt;左へスライド&lt;/string&gt;</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;string name="btn_right"&gt;右へスライド&lt;/string&gt;</li>
+      <li style="background-color:#EFF;">&lt;/resources&gt;</li>
+      </ol></code>
+
+    <a href="#close">閉じる△</a><br>
+  </div>  
+</li>
+
+<li>
+  <a href="#more6">build.gradle.kts▽</a>
+  <div class="more6" id="more6">
+  教材ではcompileSdk = 33になっていたが、エラーが出たので34に変更
+    <code>
+      <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+      <li style="background-color:#EFF;">plugins {</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;id("com.android.application")</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;id("org.jetbrains.kotlin.android")</li>
+      <li style="background-color:#EEF;">}</li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;">android {</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;namespace = "com.example.slite"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;compileSdk = 34</li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;defaultConfig {</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;applicationId = "com.example.slite"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;minSdk = 19</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;targetSdk = 34</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;versionCode = 1</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;versionName = "1.0"</li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;buildTypes {</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;release {</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isMinifyEnabled = false</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;proguardFiles(</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getDefaultProguardFile("proguard-android-optimize.txt"),</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"proguard-rules.pro"</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;compileOptions {</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sourceCompatibility = JavaVersion.VERSION_1_8</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;targetCompatibility = JavaVersion.VERSION_1_8</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;kotlinOptions {</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jvmTarget = "1.8"</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;buildFeatures{</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;viewBinding= true</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+      <li style="background-color:#EFF;">}</li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">dependencies {</li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;implementation("androidx.core:core-ktx:1.9.0")</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;implementation("androidx.appcompat:appcompat:1.6.1")</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;implementation("com.google.android.material:material:1.11.0")</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;implementation("androidx.constraintlayout:constraintlayout:2.1.4")</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;testImplementation("junit:junit:4.13.2")</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;androidTestImplementation("androidx.test.ext:junit:1.1.5")</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")</li>
+      <li style="background-color:#EEF;">}</li>
+      </ol></code>
+    <a href="#close">閉じる△</a><br>
+  </div>  
+</li>
+
+<li>
+  <a href="#more7">MainActibity.kt▽</a>
+  <div class="more7" id="more7">
+    <code>
+      <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+      <li style="background-color:#EFF;">package com.example.slite</li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">import androidx.appcompat.app.AppCompatActivity</li>
+      <li style="background-color:#EEF;">import android.os.Bundle</li>
+      <li style="background-color:#EFF;">import com.example.slite.databinding.ActivityMainBinding</li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">class MainActivity : AppCompatActivity() {</li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;private lateinit var binding: ActivityMainBinding</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;private var position = 0</li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;private var imageList = listOf(R.drawable.cap1,R.drawable.cap2,R.drawable.kj)</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;private var quoteList = listOf(</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ゆうきさんにぶん投げられた雄太郎さんの帽子",</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"「撮らないで！笑」でめっちゃキレてた雄太郎さん",</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"犯罪者面してると隅に追いやられて不服そうながらあざといポーズかましてるKJさん"</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;)</li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;private fun movePosition(num: Int) {</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position += num</li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (position &gt;= imageList.size) {</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position = 0</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else if (position &lt; 0) {</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position = imageList.size - 1</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;binding.textView.text = quoteList[position]</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;binding.imageView.setImageResource(imageList[position])</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;override fun onCreate(savedInstanceState: Bundle?) {</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super.onCreate(savedInstanceState)</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;binding = ActivityMainBinding.inflate(layoutInflater)</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setContentView(binding.root)</li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;movePosition(0)</li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;binding.BtnLeft.setOnClickListener {</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;movePosition(-1)</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;binding.BtnRight.setOnClickListener {</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;movePosition(1)</li>
+      <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+      <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+      <li style="background-color:#EEF;">}</li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;"></li>
+      <li style="background-color:#EFF;"></li>
+      <li style="background-color:#EEF;"></li>
+      </ol></code>
+
+    <a href="#close">閉じる△</a><br>
+    </div>
+  </li>
+  </ul>
+  </div>
 <br>
 <a class="backtotop" href="../doyolab/teatro.html">前のページに戻る</a>
 
