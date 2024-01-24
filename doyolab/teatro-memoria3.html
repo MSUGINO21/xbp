@@ -50,26 +50,28 @@
   <p>私がAndroid系スマホユーザーなので、今回はAndroid Studioを使ってアプリを作ってみる。<br>
   参考教材：<a href="https://www.shoeisha.co.jp/book/detail/9784798178998">いきなりプログラミング Androidアプリ開発</a></p>
  
-  <h3 class="menu-contents">1. 来場者スタンプ代わりのアプリ</h3>
-  <p>
-    舞台好きの中には多ステ（一つの演目で複数回鑑賞すること）するファンもいる。そのようなお客さんにより来場してもらえるように<br>
-    来場スタンプをつくり、複数回来たお客さんにノベルティをプレゼントしたり、割引をしたりしている劇団もある。<br>
-    <br>
-    しかし、私のような人間は紙のスタンプカードだと財布に入れたり何やらかんやらしているうちに失くしがちである。<br>
-    →さすがにスマホアプリなら失くさないし、すぐ取り出せるのでは？
-
-  </p>
-
-  <h3 class="menu-contents">やったこと</h3>
-  <p>
-    私がAndroid系スマホユーザーなので、今回はAndroid Studioを使ってアプリを作ってみる。<br>
-    <a href="https://youtube.com/shorts/qQUKhxe_dP4?si=uw2wxcWlLVW_ava6">動いてる様子</a>
-  </p>
+  
+  
     
   <ul>
     <li>
-    <a href="#more1">activity_main.xml▽</a>
+    <a href="#more1"><h3 class="menu-contents">1. 来場者スタンプ代わりのアプリ</h3></a>
     <div class="more1" id="more1">
+      <p>
+        舞台好きの中には多ステ（一つの演目で複数回鑑賞すること）するファンもいる。そのようなお客さんにより来場してもらえるように<br>
+        来場スタンプをつくり、複数回来たお客さんにノベルティをプレゼントしたり、割引をしたりしている劇団もある。<br>
+        <br>
+        しかし、私のような人間は紙のスタンプカードだと財布に入れたり何やらかんやらしているうちに失くしがちである。<br>
+        →さすがにスマホアプリなら失くさないし、すぐ取り出せるのでは？
+    
+      </p>
+    
+      <h3 class="menu-contents">やったこと</h3>
+      <p>
+        私がAndroid系スマホユーザーなので、今回はAndroid Studioを使ってアプリを作ってみる。<br>
+        <a href="https://youtube.com/shorts/qQUKhxe_dP4?si=uw2wxcWlLVW_ava6">動いてる様子</a>
+      </p>
+      <h3 class="menu-contents">activity_main.xml</h3>
       <code>
         <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
         <li style="background-color:#EFF;">&lt;?xml version="1.0" encoding="utf-8"?&gt;</li>
@@ -116,14 +118,9 @@
         <li style="background-color:#EEF;"></li>
         </ol></code>
 
-      
-      <a href="#close">閉じる△</a><br>
-    </div>
-  </li>
-   
-  <li>
-    <a href="#more2">strings.xml▽</a>
-    <div class="more2" id="more2">
+        <br>
+        
+        <h3 class="menu-contents">strings.xml</h3>
       <code>
         <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
         <li style="background-color:#EFF;">&lt;resources&gt;</li>
@@ -152,13 +149,10 @@
         <li style="background-color:#EEF;"></li>
         <li style="background-color:#EFF;">&lt;/resources&gt;</li>
         </ol></code>
-    <a href="#close">閉じる△</a><br>
-    </div>   
-  </li>
-
-  <li>
-    <a href="#more3">MainActivity.kt▽</a>
-    <div class="more3" id="more3">
+    
+        <br>
+        <h3 class="menu-contents">MainActivity.kt</h3>
+  
       <code>
         <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
         <li style="background-color:#EFF;">package com.example.sample</li>
@@ -251,11 +245,7 @@
         <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;}</li>
         <li style="background-color:#EFF;">}</li>
         </ol></code>
-    <a href="#close">閉じる△</a><br>
-    </div>  
-
-  </li>
-</ul>
+   
 
 <p>次に取り組むこと
   <ul>
@@ -264,24 +254,28 @@
     
   </ul>
 </p>
-<h3 class="menu-contents">2. 撮影可能な舞台で撮影した写真を見られるアプリ</h3>
+
+<a href="#close">閉じる△</a><br>
+</div>  
+</li>
+
+<li>
+<a href="#more2"><h3 class="menu-contents">2. 撮影可能な舞台で撮影した写真を見られるアプリ</h3></a>
+<div class="more2" id="more2">
+
   <p>
     舞台やイベントによっては上演中の撮影が可能な場合がある。普通にスマホのカメラロールに画像を入れたままでもいいが、<br>
     せっかくならコメントとかつけて閲覧できたら後から色々思い出して楽しい気持ちになれるかもしれない？
-    
-
   </p>
 
   <h3 class="menu-contents">やったこと</h3>
   <p>
-    
     <a href="https://youtube.com/shorts/FWAPe2XTcAY?feature=share">動いてる様子</a>
   </p>
 
-  <ul>
-    <li>
-  <a href="#more4">actibity_main.xml▽</a>
-  <div class="more4" id="more4">
+  <br>
+      <h3 class="menu-contents">actibity_main.xml</h3>
+  
     <code>
       <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
       <li style="background-color:#EFF;">&lt;?xml version="1.0" encoding="utf-8"?&gt;</li>
@@ -353,13 +347,9 @@
       <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintStart_toStartOf="parent" /&gt;</li>
       <li style="background-color:#EEF;">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</li>
       </ol></code>
-    <a href="#close">閉じる△</a><br>
-  </div>  
-</li>
 
-<li>
-  <a href="#more5">strings.xml▽</a>
-  <div class="more5" id="more5">
+      <h3 class="menu-contents">strings.xml</h3>
+
     <code>
       <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
       <li style="background-color:#EFF;">&lt;resources&gt;</li>
@@ -370,13 +360,10 @@
       <li style="background-color:#EEF;">&lt;/resources&gt;</li>
       </ol></code>
 
-    <a href="#close">閉じる△</a><br>
-  </div>  
-</li>
+   <br>
 
-<li>
-  <a href="#more6">build.gradle.kts▽</a>
-  <div class="more6" id="more6">
+
+  <h3 class="menu-contents">build.gradle.kts</h3>
   教材ではcompileSdk = 33になっていたが、エラーが出たので34に変更
     <code>
       <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
@@ -433,13 +420,11 @@
       <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")</li>
       <li style="background-color:#EEF;">}</li>
       </ol></code>
-    <a href="#close">閉じる△</a><br>
-  </div>  
-</li>
 
-<li>
-  <a href="#more7">MainActibity.kt▽</a>
-  <div class="more7" id="more7">
+      <br>
+   
+      <h3 class="menu-contents">build.gradle.ktsMainActibity.kt</h3>
+
     <code>
       <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
       <li style="background-color:#EFF;">package com.example.slite</li>
@@ -503,11 +488,446 @@
       <li style="background-color:#EFF;"></li>
       </ol></code>
 
-    <a href="#close">閉じる△</a><br>
-    </div>
-  </li>
+      <a href="#close">閉じる△</a><br>
+    </div>  
+    </li>
+
+    <li>
+      <a href="#more3"><h3 class="menu-contents">3. 舞台ごとのまとめアプリ</h3></a>
+<div class="more3" id="more3">
+
+  <p>
+    舞台ごとに紹介文、X(旧twitter)の該当ハッシュタグのページが見れて、かつ人にも布教できたら良いのにな、という劇団オタク向けアプリ<br>
+    <a href="teatro-memoria2.html">pythonでやろうとしたヤツ</a>の続きみたいなもの
+  </p>
+
+  <h3 class="menu-contents">やったこと</h3>
+  <p>
+    <a href="">動いてる様子</a>
+  </p>
+
+  <br>
+      <h3 class="menu-contents">strings.xml</h3>
+      <code>
+        <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+        <li style="background-color:#EFF;">&lt;resources&gt;</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;string name="app_name"&gt;Favorites&lt;/string&gt;</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;string name="image_description"&gt;推しの画像&lt;/string&gt;</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;string name="label_date"&gt;上演：%s&lt;/string&gt;</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;string name="btn_url"&gt;Xをみる&lt;/string&gt;</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;string name="btn_share"&gt;おすすめする&lt;/string&gt;</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;string name="btnBack"&gt;戻る&lt;/string&gt;</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;string name="explain_1"&gt;人口わずか170名の島『津久江島』何もないこの島、一応住所は東京都。</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;住人たちは現代のテクノロジーからかけ離れた生活を送っていた・・・</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;そんな『津久江島』に嫌気がさし、本土に強い憧れをもつ「岸野弥生」は島から出ようと決意する。</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;しかし、出発当日、島の異変に気づく・・・・</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;人々の憩いの場となっている島唯一の病院「田島産婦人科」には島の異変に気付いた住人達がパニックになり集まっていた・・・・</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;一体津久江島に何が起こったのか・・・・?&lt;/string&gt;</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;string name="explain_2"&gt;映画監督を目指す拓郎はある出来事をきっかけに部分的に記憶を失ってしまう。</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;そこに当時の旧友から授かったバーチャルリアリティゲーム「どぎまぎメモリアル」。</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;それは自身の想像力を元に恋愛シミュレーションができるゲーム。</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;あんなことやこんなこともできる中で拓郎は違和感を感じる。</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;「俺・・・これ知ってる。」破茶滅茶なゲーム展開に食らいつきながら拓郎は自身の記憶を取り戻していく・・・。&lt;/string&gt;</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;string name="explain_3"&gt;私立彩色女子学園高等学校芸能科。それぞれの「才」を尊重し、活かし、伸ばすことを第一に考える東京屈指の芸能学校。</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;ここでは「エンタメ力」というものが評価基準の全てとされ、上位の者には独自のパイプ で望む未来への道が約束される。</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;だが近年の少子化、個人活動の繁栄によって生徒は激減し廃校の危機 学園の復興を願う理事長はある提案をする。</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;「彩色祭で大賞を獲ったクラスには年末のゴールデン特番2時間の枠を独占させる」</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;生徒たちは将来のスターへ約束される道を狙い争い合う&lt;/string&gt;</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;string name="explain_4"&gt;「香澄は目の前が真っ暗になった」同郷の仲間二人と役者になるために上京したその世界は想像を超える厳しさだったが、夢を叶えたいという一心で乗り越えてきた。</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;しかしある出来事をきっかけに香澄の心の中で張り詰めていた糸がプツンと切れてしまう。</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;そこに現れたのは”ドリームキャッチャー”という夢叶えさせ屋。少々無茶はあるものの、香澄の願望はどんどん叶えられていく。</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;願っていたことが叶っていく中で香澄はある疑問を抱く。「あれ？結局私にとっての夢ってなんだったっけ――」</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;初めて自分の夢と真剣に向き合おうとする女性の物語。&lt;/string&gt;</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;string name="explain_5"&gt;年に一度、村を上げて開催される小湊祭りの日、祭り会場から近い老舗の旅館『鴨川屋』は大忙しだった。</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;しかし、祭りの日以外は閑古鳥が鳴くこの旅館は、この日を最後に閉館が決まっていた・・幽霊が出ると噂されている『椿の間』鴨川屋の館長は最後に幽霊を成仏させる為に霊</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;媒師を呼ぶが、何も知らない新人の仲居が飛び込みの客を椿の間に泊めてしまう・・・そして、最後の日に最強のクレーマーが現れる・・</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;それぞれの想いを胸に業務をこなす中居達、客室内で巻き起こるトラブルを乗り越え『鴨川屋』は無事に最後の日を終える事ができるのか・・・・？&lt;/string&gt;</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;string name="explain_6"&gt;県立音葉高等学校に転校してきた「神楽駒音」は、早々恋に落ちてしまった。お相手は爽やかな好青年「仁志敏久」。彼の誘いで、駒音は将棋部に入部する事に。</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;しかし、生徒会長の魔の手によって将棋部は廃部へと追いやられてしまう......廃部を回避する方法はただ1つ、大会で優勝する事だった。</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;果たして将棋部の運命は?そして神楽駒音が抱えている秘密とは......?&lt;/string&gt;</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;string name="explain_7"&gt;ホスト業界では汚い金稼ぎが主流となり、眠らない街と言われていたこの街も少しずつ活気が薄れていた。</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;そんな歌舞伎町で透はただただバイトをしていた。何かしたいと心では思っていても一歩が出ない中途半端な人生。そこに現れたホスト東堂雅。</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;今のホスト業界を変えるため訴えを続ける雅に透は心を打たれる。「いいか、ホストにとって夢ってのは見るもんじゃねぇ。見せるもんだ」</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;一歩を踏み出しホストを目指す透だったが、そこは今にも潰れる寸前のホストクラブ「ラブ本店」</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;ギリギリの状態で営業を続ける中でもやり方を変えないこの店にも透は疑問を抱くが、徐々に大切なことに気付かされていく。&lt;/string&gt;</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;string name="explain_8"&gt;歌舞伎町ホスト業界。楽して稼げるイメージからホストの人口は急激に上がりはしたものの、現実は厳しかった。</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;収入の差の激しさから汚いやり方に手を染める若手が増え、ホストのイメージはより一層悪くなってしまう。</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;だが、そんな時代を一人のホストが変えた。「ホストにとって夢ってのは叶えるもんじゃねえ、魅せるもんだ」</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;真の男（ホスト）たちにより再び息を吹き返したホスト業界だったが、そこに新たなジャンルが参入したことにより事態は一変する。</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;その名も「男装ホスト」 「ホストクラブなのに女？いえいえ。体は女性でも見た目や心は男より男らしい男装ホストたちが甘い夜へと誘います。」</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;世はまさに大ホスト時代。&lt;/string&gt;</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;string name="url_1"&gt;https://twitter.com/search?q=%23%E7%94%A3%E3%83%95%E3%82%A9%E3%83%BC&amp;amp;src=typed_query&amp;amp;f=top&lt;/string&gt;</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;string name="url_2"&gt;https://twitter.com/search?q=%23%E3%81%A9%E3%81%8E%E3%83%A1%E3%83%A22023&amp;amp;src=typed_query&amp;amp;f=top&lt;/string&gt;</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;string name="url_3"&gt;https://twitter.com/search?q=%23%E5%BD%A9%E5%A5%B3&amp;amp;src=typed_query&amp;amp;f=top&lt;/string&gt;</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;string name="url_4"&gt;https://twitter.com/search?q=%23%E5%A4%A2%E3%81%BC%E3%81%8F%E3%82%8D&amp;amp;src=typed_query&amp;amp;f=top&lt;/string&gt;</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;string name="url_5"&gt;https://twitter.com/search?q=%23%E9%B4%A8%E3%83%95%E3%82%A1%E3%82%A4&amp;amp;src=typed_query&amp;amp;f=top&lt;/string&gt;</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;string name="url_6"&gt;https://twitter.com/search?q=%23%E9%A3%9B%E8%BB%8A%E3%83%A2%E3%83%B32023&amp;amp;src=typed_query&amp;amp;f=top&lt;/string&gt;</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;string name="url_7"&gt;https://twitter.com/search?q=%23%E3%83%93%E3%82%BF%E3%83%8A%E3%82%A42023&amp;amp;src=typed_query&amp;amp;f=top&lt;/string&gt;</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;string name="url_8"&gt;https://twitter.com/search?q=%23%E3%82%B7%E3%83%A5%E3%82%AC%E3%83%8A%E3%82%A42023&amp;amp;src=typed_query&amp;amp;f=top&lt;/string&gt;</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">&lt;/resources&gt;</li>
+        </ol></code>
+      <br>
+      <h3 class="menu-contents">actibity_main.xml</h3>
+      <code>
+        <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+        <li style="background-color:#EFF;">&lt;?xml version="1.0" encoding="utf-8"?&gt;</li>
+        <li style="background-color:#EEF;">&lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;xmlns:app="http://schemas.android.com/apk/res-auto"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;xmlns:tools="http://schemas.android.com/tools"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="match_parent"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="match_parent"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;tools:context=".DetailActivity"&gt;</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;ImageView</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id="@+id/detailImage"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="180dp"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="180dp"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_marginTop="40dp"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:contentDescription="@string/image_description"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintEnd_toEndOf="parent"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintStart_toStartOf="parent"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintTop_toTopOf="parent"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tools:srcCompat="@tools:sample/avatars" /&gt;</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;TextView</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id="@+id/detailName"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="wrap_content"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="wrap_content"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_marginTop="20dp"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:textSize="18sp"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintEnd_toEndOf="parent"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintStart_toStartOf="parent"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintTop_toBottomOf="@+id/detailImage"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tools:text="舞台名" /&gt;</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;TextView</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id="@+id/detailDate"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="wrap_content"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="wrap_content"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_marginTop="20dp"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:textSize="16sp"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintEnd_toEndOf="parent"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintStart_toStartOf="parent"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintTop_toBottomOf="@+id/detailName"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tools:text="上演：2000/1/1" /&gt;</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;TextView</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id="@+id/detailExplain"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="wrap_content"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="wrap_content"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_marginTop="20dp"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:paddingHorizontal="20dp"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:textSize="14sp"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintEnd_toEndOf="parent"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintStart_toStartOf="parent"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintTop_toBottomOf="@+id/detailDate"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:lineHeight="24sp"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tools:text="ここにテキストが入ります。ここにテキストが入ります。https://google.com" /&gt;</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;Button</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id="@+id/btnShare"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="wrap_content"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="wrap_content"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:text="@string/btn_share"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintBottom_toBottomOf="parent"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintEnd_toEndOf="parent"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintStart_toStartOf="parent"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintTop_toBottomOf="@+id/detailExplain" /&gt;</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;Button</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id="@+id/urlView"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="wrap_content"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="wrap_content"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:text="@string/btn_url"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintBottom_toBottomOf="parent"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintEnd_toStartOf="@+id/detailImage"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintTop_toBottomOf="@+id/detailExplain" /&gt;</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;Button</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id="@+id/btnBack"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="wrap_content"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="wrap_content"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:text="@string/btnBack"</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintBottom_toBottomOf="parent"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintStart_toEndOf="@+id/detailImage"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintTop_toBottomOf="@+id/detailExplain" /&gt;</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</li>
+        </ol></code>
+      <br>
+      <h3 class="menu-contents">actibity_detail.xml</h3>
+      <code>
+        <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+        <li style="background-color:#EFF;">&lt;?xml version="1.0" encoding="utf-8"?&gt;</li>
+        <li style="background-color:#EEF;">&lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;xmlns:app="http://schemas.android.com/apk/res-auto"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;xmlns:tools="http://schemas.android.com/tools"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="match_parent"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="match_parent"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;tools:context=".DetailActivity"&gt;</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;ImageView</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id="@+id/detailImage"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="180dp"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="180dp"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_marginTop="40dp"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:contentDescription="@string/image_description"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintEnd_toEndOf="parent"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintStart_toStartOf="parent"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintTop_toTopOf="parent"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tools:srcCompat="@tools:sample/avatars" /&gt;</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;TextView</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id="@+id/detailName"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="wrap_content"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="wrap_content"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_marginTop="20dp"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:textSize="18sp"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintEnd_toEndOf="parent"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintStart_toStartOf="parent"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintTop_toBottomOf="@+id/detailImage"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tools:text="舞台名" /&gt;</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;TextView</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id="@+id/detailDate"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="wrap_content"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="wrap_content"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_marginTop="20dp"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:textSize="16sp"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintEnd_toEndOf="parent"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintStart_toStartOf="parent"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintTop_toBottomOf="@+id/detailName"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tools:text="上演：2000/1/1" /&gt;</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;TextView</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id="@+id/detailExplain"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="wrap_content"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="wrap_content"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_marginTop="20dp"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:paddingHorizontal="20dp"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:textSize="14sp"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintEnd_toEndOf="parent"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintStart_toStartOf="parent"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintTop_toBottomOf="@+id/detailDate"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:lineHeight="24sp"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tools:text="ここにテキストが入ります。ここにテキストが入ります。https://google.com" /&gt;</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;Button</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id="@+id/btnShare"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="wrap_content"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="wrap_content"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:text="@string/btn_share"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintBottom_toBottomOf="parent"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintEnd_toEndOf="parent"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintStart_toStartOf="parent"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintTop_toBottomOf="@+id/detailExplain" /&gt;</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;Button</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id="@+id/urlView"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="wrap_content"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="wrap_content"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:text="@string/btn_url"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintBottom_toBottomOf="parent"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintEnd_toStartOf="@+id/detailImage"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintTop_toBottomOf="@+id/detailExplain" /&gt;</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;Button</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id="@+id/btnBack"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="wrap_content"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="wrap_content"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:text="@string/btnBack"</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintBottom_toBottomOf="parent"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintStart_toEndOf="@+id/detailImage"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintTop_toBottomOf="@+id/detailExplain" /&gt;</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</li>
+        </ol></code>
+      <br>
+      <h3 class="menu-contents">lint_item.xml</h3>
+      <code>
+        <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+        <li style="background-color:#EFF;">&lt;?xml version="1.0" encoding="utf-8"?&gt;</li>
+        <li style="background-color:#EEF;">&lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;xmlns:app="http://schemas.android.com/apk/res-auto"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;xmlns:tools="http://schemas.android.com/tools"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="match_parent"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="match_parent"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;android:padding="6dp"&gt;</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;ImageView</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id="@+id/image"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="50dp"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="50dp"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:contentDescription="@string/image_description"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintStart_toStartOf="parent"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintTop_toTopOf="parent"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tools:src="@tools:sample/avatars"/&gt;</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;TextView</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id="@+id/name"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="wrap_content"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="wrap_content"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:paddingStart="6dp"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:paddingEnd="6dp"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:textSize="18sp"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintBottom_toBottomOf="@+id/image"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app:layout_constraintStart_toEndOf="@+id/image"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tools:text="推しの名前"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</li>
+        </ol></code>
+      <br>
+      <h3 class="menu-contents">MainActivity.kt</h3>
+      <code>
+        <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+        <li style="background-color:#EFF;">package com.example.favorites</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">import android.content.Intent</li>
+        <li style="background-color:#EEF;">import androidx.appcompat.app.AppCompatActivity</li>
+        <li style="background-color:#EFF;">import android.os.Bundle</li>
+        <li style="background-color:#EEF;">import android.widget.ArrayAdapter</li>
+        <li style="background-color:#EFF;">import android.widget.SimpleAdapter</li>
+        <li style="background-color:#EEF;">import android.widget.Toast</li>
+        <li style="background-color:#EFF;">import com.example.favorites.databinding.ActivityMainBinding</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">class MainActivity : AppCompatActivity() {</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;private lateinit var binding: ActivityMainBinding</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;override fun onCreate(savedInstanceState: Bundle?) {</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super.onCreate(savedInstanceState)</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;binding = ActivityMainBinding.inflate(layoutInflater)</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setContentView(binding.root)</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;binding.listView.adapter= SimpleAdapter(</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this, listData, R.layout.lint_item, arrayOf("image","name"), intArrayOf(R.id.image,R.id.name)</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;binding.listView.setOnItemClickListener{ _, _, position, _-&gt;</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startActivity(</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Intent(this@MainActivity, DetailActivity::class.java).apply{</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;putExtra("POSITION", position)</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Toast.makeText(this, "${listData[position]["name"]}を選択しました",</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Toast.LENGTH_SHORT).show()</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+        <li style="background-color:#EFF;">}</li>
+        </ol></code>
+
+      <br>
+      <h3 class="menu-contents">DetailActivity.kt</h3>
+      <code>
+        <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+        <li style="background-color:#EFF;">package com.example.favorites</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">import android.content.Intent</li>
+        <li style="background-color:#EEF;">import android.net.Uri  // Import Uri</li>
+        <li style="background-color:#EFF;">import androidx.appcompat.app.AppCompatActivity</li>
+        <li style="background-color:#EEF;">import android.os.Bundle</li>
+        <li style="background-color:#EFF;">import com.example.favorites.databinding.ActivityDetailBinding</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">class DetailActivity : AppCompatActivity() {</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;private lateinit var binding: ActivityDetailBinding</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;override fun onCreate(savedInstanceState: Bundle?) {</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super.onCreate(savedInstanceState)</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;binding = ActivityDetailBinding.inflate(layoutInflater)</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setContentView(binding.root)</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val position = intent.getIntExtra("POSITION", 0)</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val data = listData[position]</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val name = data["name"].toString()</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val date = data["date"].toString()</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val explain = resources.getString(data["explain"].toString().toInt())</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;binding.detailImage.setImageResource(data["image"].toString().toInt())</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;binding.detailName.text = name</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;binding.detailDate.text = getString(R.string.label_date, date)</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;binding.detailExplain.text = explain</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;binding.urlView.setOnClickListener {</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// URL を取得</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val url = resources.getString(data["url"].toString().toInt())</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// URL を開くための Intent を作成</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val openUrlIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Intent を実行</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startActivity(openUrlIntent)</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;binding.btnShare.setOnClickListener {</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val subject = "【 ${name}】を布教"</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val message = "舞台タイトル：${name} \n 誕生日:${date} \n\n ${explain} "</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val sendIntent: Intent = Intent().apply {</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;action = Intent.ACTION_SEND</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;putExtra(Intent.EXTRA_SUBJECT, subject)</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;putExtra(Intent.EXTRA_TEXT, message)</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type = "text/plain"</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val shareIntent = Intent.createChooser(sendIntent, null)</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startActivity(shareIntent)</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;binding.btnBack.setOnClickListener {</li>
+        <li style="background-color:#EEF;">// Create an Intent to navigate to MainActivity</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val intent = Intent(this@DetailActivity, MainActivity::class.java)</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Start the MainActivity</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startActivity(intent)</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Finish the current activity to remove it from the back stack</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;finish()</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+        <li style="background-color:#EFF;">}</li>
+        <li style="background-color:#EEF;"></li>
+        </ol></code>
+
+      <br>
+      <h3 class="menu-contents">Datasource.kt</h3>
+      <code>
+        <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+        <li style="background-color:#EFF;">package com.example.favorites</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">val listData = listOf(</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;mapOf("image" to R.drawable.person1, "name" to "産声フォーユー", "date" to "2023年2月", "explain" to R.string.explain_1, "url" to R.string.url_1),</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;mapOf("image" to R.drawable.person2, "name" to "どきまぎメモリアル", "date" to "2023年3月、4月、9月", "explain" to R.string.explain_2,"url" to R.string.url_2),</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;mapOf("image" to R.drawable.person3, "name" to "志立彩色女学院アイドル科", "date" to "2023年5月", "explain" to R.string.explain_3, "url" to R.string.url_3),</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;mapOf("image" to R.drawable.person4, "name" to "夢ぼくろファンタジア", "date" to "2023年6月", "explain" to R.string.explain_4,"url" to R.string.url_4),</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;mapOf("image" to R.drawable.person5, "name" to "鴨川ファイヤーワークス", "date" to "2023年7月", "explain" to R.string.explain_5, "url" to R.string.url_5),</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;mapOf("image" to R.drawable.person6, "name" to "高飛車モンスター", "date" to "2023年8月", "explain" to R.string.explain_6, "url" to R.string.url_6),</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;mapOf("image" to R.drawable.person7, "name" to "歌舞伎町ビターナイト", "date" to "2023年10月", "explain" to R.string.explain_7, "url" to R.string.url_7),</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;mapOf("image" to R.drawable.person8, "name" to "歌舞伎町シュガーナイト", "date" to "2023年11月", "explain" to R.string.explain_8, "url" to R.string.url_8),</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">)</li>
+        </ol></code>
+
+        <a href="#close">閉じる△</a><br>
+      </div>  
+      </li>
+
   </ul>
-  </div>
+  
 <br>
 <a class="backtotop" href="../doyolab/teatro.html">前のページに戻る</a>
 
